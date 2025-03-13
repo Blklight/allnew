@@ -13,7 +13,7 @@ export default function Login() {
 
   return (
     <div className="w-full flex flex-row h-svh">
-      <div className="relative bg-slate-50 dark:bg-slate-950 shadow rounded-lg border flex flex-1 gap-4 my-5 mx-5">
+      <div className="relative bg-background shadow-md rounded-md border flex flex-1 gap-4 my-5 mx-5">
         <div className="absolute top-8 right-8 flex gap-2">
           {isLogin ? (
             <Button variant={"ghost"} onClick={() => setIsLogin(false)}>
@@ -28,6 +28,20 @@ export default function Login() {
           <ModeToggle />
         </div>
         <Skeleton className="grow m-8 hidden lg:block" />
+        {/* <div className="flex flex-1 flex-col justify-center m-8">
+          <span className="text-[96px] font-bold">
+            <span className="marker-line bg-bluesky-500 px-2">ALL</span>
+          </span>
+          <span className="text-[96px] font-bold">
+            <span className="marker-line bg-bluesky-500 px-2">NEW</span>
+          </span>
+          <span className="text-[96px] font-bold">
+            <span className="marker-line bg-bluesky-500 px-2">BLK</span>
+          </span>
+          <span className="text-[96px] font-bold">
+            <span className="marker-line bg-bluesky-500 px-2">LIGHT</span>
+          </span>
+        </div> */}
         <div className="flex flex-col flex-1 m-8 justify-center space-y-6 lg:p-8">
           <AnimatePresence mode="wait">
             <motion.div

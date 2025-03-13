@@ -14,7 +14,7 @@ export default function Home() {
     <SidebarProvider>
       <div className="w-full flex flex-row min-h-svh">
         <IconSidebar />
-        <div className="bg-slate-50 dark:bg-slate-950 shadow rounded-lg border flex-1 my-2.5 mr-2.5">
+        <div className="bg-background shadow-md rounded-lg border flex-1 my-2.5 mr-2.5">
           <NavToolbar />
           <div className="mt-2 mb-5 px-4">
             <img

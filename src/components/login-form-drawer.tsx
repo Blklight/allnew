@@ -81,7 +81,7 @@ export const LoginFormDrawer = ({
               </FormItem>
             )}
           />
-          <Button className="w-full mt-2" type="submit">
+          <Button className="w-full mt-2" type="submit" variant={"blklight"}>
             Acessar
           </Button>
         </form>
@@ -97,10 +97,10 @@ export const LoginFormDrawer = ({
         </div>
       </div>
       <div className="flex gap-2 justify-center">
-        <Button variant="outline" type="button">
+        <Button type="button" variant={"blklight"}>
           <GoogleLogo className="h-4 w-4" weight="bold" />
         </Button>
-        <Button variant="outline" type="button">
+        <Button type="button" variant={"blklight"}>
           <GithubLogo className="h-4 w-4" weight="bold" />
         </Button>
       </div>

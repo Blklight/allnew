@@ -23,7 +23,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Wireframes - All New Blklight",
+  title: "All New Blklight",
   description: "Wireframes for the new Blklight website",
 };
 
@@ -40,6 +40,7 @@ export default function RootLayout({
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
+          themes={["light", "dark", "book", "system"]}
           enableSystem
           disableTransitionOnChange
         >
