@@ -141,8 +141,8 @@
   --card-foreground: oklch(0.985 0.002 247.839);
   --popover: var(--color-dark);
   --popover-foreground: oklch(0.985 0.002 247.839);
-  --primary: oklch(0.985 0.002 247.839);
-  --primary-foreground: oklch(0.21 0.034 264.665);
+  --primary: var(--color-blklight-500);
+  --primary-foreground: var(--color-light);
   --secondary: oklch(0.278 0.033 256.848);
   --secondary-foreground: oklch(0.985 0.002 247.839);
   --muted: oklch(0.278 0.033 256.848);
@@ -271,5 +271,33 @@
   body {
     @apply bg-background text-foreground;
     font-family: "Inter", "Geist Sans", sans-serif;
+  }
+
+  .font-inter {
+    font-family: "Inter", "Geist Sans", sans-serif;
+  }
+
+  .font-barlow {
+    font-family: "Barlow", "Inter", "Geist Sans", sans-serif;
+  }
+
+  .font-jetbrains {
+    font-family: "JetBrains Mono", "Geist Mono", monospace;
+  }
+
+  .font-eb-garamond {
+    font-family: "EB Garamond", serif;
+  }
+
+  .font-roboto {
+    font-family: "Roboto", sans-serif;
+  }
+
+  .font-overpass {
+    font-family: "Overpass", sans-serif;
+  }
+
+  .font-playfair {
+    font-family: "Playfair Display", serif;
   }
 }
