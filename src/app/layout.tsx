@@ -15,6 +15,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/navbar";
 import { DevTools } from "@/components/dev-tools";
 import { Toaster } from "@/components/ui/sonner";
+import DuotoneFilter from "@/components/duotone-filter";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -101,6 +102,7 @@ export default function RootLayout({
           {/* </div> */}
           <Toaster />
           <DevTools />
+          <DuotoneFilter />
         </ThemeProvider>
       </body>
     </html>

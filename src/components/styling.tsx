@@ -43,7 +43,7 @@ import {
 import { useRouter } from "next/navigation";
 
 // Definindo a interface para os dados do card
-interface CardData {
+export interface CardData {
   id: number;
   title: string;
   description: string;
