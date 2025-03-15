@@ -32,9 +32,9 @@ export default async function Home() {
   return (
     <>
       <img
-        src={"/example-img.jpg"}
+        src={"https://i.imgur.com/xDEd3HH.jpg"}
         alt="Image"
-        className="w-full h-96 object-cover !bg-dark-100 dark:!bg-muted mb-4 rounded-lg grayscale"
+        className="w-full h-[500px] object-cover !bg-dark-100 dark:!bg-muted mb-4 rounded-lg "
       />
 
       <div>
@@ -70,7 +70,6 @@ export default async function Home() {
             />
           );
         })}
-        <TutorialFrame title="Tutorial">teste</TutorialFrame>
       </div>
     </>
   );

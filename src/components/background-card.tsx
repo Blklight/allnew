@@ -57,7 +57,7 @@ export const BackgroundCard = ({
         style={{ filter: "url(#duotoneFilter)" }}
       />
 
-      <div className="absolute top-0 left-0 right-0 bottom-0 p-4 rounded-md flex flex-col bg-gradient-to-b from-transparent from-50% to-black/90">
+      <div className="absolute top-0 left-0 right-0 bottom-0 p-4 rounded-md flex flex-col bg-gradient-to-b from-transparent from-40% to-black/90">
         <div className="flex justify-between mb-2.5">
           <div className="flex gap-2">
             <div className="flex items-center px-2 py-0.5 h-9 bg-orange-500 text-dark rounded-md capitalize">

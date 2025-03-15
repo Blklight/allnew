@@ -20,6 +20,10 @@ import DuotoneFilter from "@/components/duotone-filter";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { IconSidebar } from "@/components/icon-sidebar";
 import { NavToolbar } from "@/components/nav-toolbar";
+import NoiseBackground from "@/components/noise-background";
+import OrangeWhite from "@/components/filters/orange-white";
+import YellowWhiteBlack from "@/components/filters/yellow-white-black";
+import MagentaWhite from "@/components/filters/magenta-white";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -103,9 +107,10 @@ export default function RootLayout({
           <SidebarProvider>
             <div className="w-full flex flex-row min-h-svh">
               <IconSidebar />
-              <div className="bg-background shadow-md rounded-lg border flex-1 my-2.5 mr-2.5">
+              <div className="relative bg-background shadow-lg rounded-md border flex-1 my-2.5 mr-2.5 background-texture">
                 <NavToolbar />
                 <div className="pt-2.5 mb-5 px-4">{children}</div>
+                {/* <NoiseBackground density={0.9} opacity={0.075} /> */}
               </div>
             </div>
           </SidebarProvider>
@@ -113,6 +118,9 @@ export default function RootLayout({
           <Toaster />
           <DevTools />
           <DuotoneFilter />
+          <OrangeWhite />
+          <YellowWhiteBlack />
+          <MagentaWhite />
         </ThemeProvider>
       </body>
     </html>
