@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 @plugin "tailwindcss-animate";
+@plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
 @custom-variant book (&:is(.book *));
@@ -300,4 +301,42 @@
   .font-playfair {
     font-family: "Playfair Display", serif;
   }
+
+  /* Arquivo de estilos com Tailwind CSS usando @apply */
 }
+
+@layer components {
+  .prose hr {
+    margin: 8px 0 !important;
+  }
+}
+
+// .main-article .article-grid {
+//   letter-spacing: 0.01em;
+//   font-size: 18px;
+//   line-height: 1.5;
+// }
+
+// .main-article .article-grid .serif {
+// }
+
+// .main-article .article-grid .serif h1,
+// .main-article .article-grid .serif h2,
+// .main-article .article-grid .serif h3,
+// .main-article .article-grid .serif h4,
+// .main-article .article-grid .serif h5,
+// .main-article .article-grid .serif h6 {
+//   font-family: "Playfair Display", serif !important;
+// }
+
+// .main-article .article-grid .serif p {
+//   font-family: "EB Garamond", serif !important;
+// }
+
+// .main-article .article-grid .barlow {
+//   font-family: "Barlow", sans-serif !important;
+// }
+
+// .main-article .article-grid .mono {
+//   font-family: "JetBrains Mono", monospace !important;
+// }

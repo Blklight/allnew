@@ -45,10 +45,9 @@ export const NavToolbar = () => {
         <div className="flex gap-2 items-center">
           {isLogged && (
             <SplitDropdownButton
-              iconOnly
+              label="Criar"
               icon={<Sparkle className="h-4 w-4" />}
               options={routeTools}
-              variant="secondary"
               onClick={() => router.push("/tools")}
             />
           )}

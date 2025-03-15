@@ -1,0 +1,124 @@
+---
+title: "Introdução ao React: Conceitos e Primeiro Execício"
+description: "Um guia introdutório para entender os conceitos básicos do React e criar seu primeiro componente."
+documentType: "tutorial"
+date: "2025-03-14 10:37"
+cover: "https://i.imgur.com/Qw6LuRE.jpg"
+tags:
+  - react
+  - javascript
+  - frontend
+draft: false
+stylesheet:
+  pageLayout: ""
+  cardLayout: ""
+  typography: "serif-font"
+  filter: ""
+tutorial:
+  lerningPath: ""
+  step:
+  difficulty: "iniciante"
+authors:
+  - name: Ultimate Mercer
+    quote:
+---
+
+## Introdução ao React 🚀
+
+O desenvolvimento web evoluiu muito nos últimos anos, e o **React** surgiu como uma das tecnologias mais populares para a construção de interfaces modernas e dinâmicas. Criado pelo Facebook em 2013, o React permite criar aplicações de forma eficiente, utilizando **componentes reutilizáveis** e um fluxo de atualização otimizado.
+
+Mas por que o React se tornou tão amplamente adotado?
+
+### O que torna o React especial?
+
+Diferente da abordagem tradicional de manipulação do DOM (Document Object Model), o React usa um conceito chamado **Virtual DOM**. Em vez de modificar diretamente os elementos da página, ele mantém uma cópia virtual da interface e atualiza apenas as partes que realmente mudaram. Isso torna as aplicações mais rápidas e responsivas.
+
+Outro ponto forte do React é sua **sintaxe declarativa**, que permite descrever o que a interface deve fazer sem precisar se preocupar com os detalhes de como isso será executado.
+
+Aqui estão os três pilares que fazem do React uma tecnologia poderosa:
+
+1. **Componentes**: O React é baseado na construção de pequenos blocos reutilizáveis, chamados componentes, que representam diferentes partes da interface.
+2. **JSX (JavaScript XML)**: Uma extensão de JavaScript que permite escrever código parecido com HTML dentro do JavaScript. Isso facilita a criação de interfaces de forma intuitiva.
+3. **Estado (State) e Propriedades (Props)**: Mecanismos que controlam o fluxo de dados dentro da aplicação, permitindo componentes interativos e dinâmicos.
+
+---
+
+### 🛠️ Criando seu primeiro componente
+
+Agora que entendemos os conceitos básicos, vamos colocar a mão na massa e criar um **componente React funcional** simples.
+
+```jsx
+function BemVindo() {
+  return <h1>Olá, seja bem-vindo ao React!</h1>;
+}
+
+export default BemVindo;
+```
+
+Esse código define um componente funcional chamado BemVindo, que retorna um título <code>h1</code>.
+
+Agora, vamos usá-lo dentro da nossa aplicação:
+
+```jsx
+import React from "react";
+import ReactDOM from "react-dom/client";
+import BemVindo from "./BemVindo";
+
+ReactDOM.createRoot(document.getElementById("root")).render(<BemVindo />);
+```
+
+Aqui, estamos importando o componente BemVindo e o renderizando dentro da div com o id="root" no HTML.
+
+<TutorialFrame title="Tutorial">
+
+### Exercício prático
+
+Agora é sua vez! Crie um componente chamado Perfil, que receba um nome via props e o exiba na tela.
+
+#### Requisitos:
+
+- O componente deve se chamar Perfil.
+- Ele deve exibir o texto: "Olá, meu nome é [nome]!" (onde [nome] é passado via props).
+- No App.js, renderize três Perfil com nomes diferentes.
+
+Código esperado:
+
+```jsx
+function Perfil({ nome }) {
+  return <h2>Olá, meu nome é {nome}!</h2>;
+}
+
+export default Perfil;
+```
+
+Agora, no App.js:
+
+```jsx
+import Perfil from "./Perfil";
+
+function App() {
+  return (
+    <div>
+      <Perfil nome="Julian" />
+      <Perfil nome="Alice" />
+      <Perfil nome="Carlos" />
+    </div>
+  );
+}
+
+export default App;
+```
+
+Se tudo estiver correto, você verá três nomes diferentes sendo exibidos na tela.
+
+</TutorialFrame>
+
+Conclusão
+Neste tutorial, aprendemos:
+✅ O que é React e seus principais conceitos.
+✅ Como criar e renderizar componentes.
+✅ Como passar props para tornar os componentes dinâmicos.
+
+Agora você tem uma base sólida para explorar mais recursos do React!
+
+Caso tenha dúvidas, explore a documentação oficial: react.dev

@@ -123,7 +123,7 @@ export function SplitDropdownButton({
           <span
             className={cn(
               "transition-transform duration-200 group-hover:scale-110",
-              iconOnly ? "" : "mr-2"
+              iconOnly ? "" : "mr-1"
             )}
           >
             {icon}

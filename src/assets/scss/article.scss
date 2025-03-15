@@ -1,0 +1,76 @@
+.main-article {
+  .article-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 10px 680px 10px 1fr 1fr;
+    font-size: 18px;
+    padding-bottom: 1.5rem;
+  }
+
+  .article-grid > * {
+    grid-column-start: 4;
+    grid-column-end: 4;
+  }
+
+  .article-grid > figure {
+    grid-column-start: 3;
+    grid-column-end: -3;
+    margin: 16px 0 20px;
+  }
+
+  .article-grid > figure > pre {
+    font-family: JetBrains Mono, monospace;
+    border-radius: 8px;
+  }
+
+  .article-grid > blockquote {
+    grid-column-start: 3;
+    grid-column-end: 5;
+  }
+
+  .article-grid > #tutorial-frame {
+    grid-column-start: 1;
+    grid-column-end: 8;
+    margin: 8px;
+  }
+
+  .article-grid > hr {
+    margin: 4px 0 16px !important;
+  }
+
+  .article-grid > p {
+    margin: 0 0 16px !important;
+  }
+}
+
+.main-article {
+  .serif {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: "Playfair Display", serif !important;
+    }
+
+    p {
+      font-family: "EB Garamond", serif !important;
+    }
+  }
+}
+
+.serif-font {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Playfair Display", serif !important;
+  }
+
+  p,
+  li {
+    font-family: "EB Garamond", serif !important;
+  }
+}

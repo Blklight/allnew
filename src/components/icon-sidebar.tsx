@@ -11,7 +11,7 @@ export const IconSidebar = () => {
         <Link href="/">
           <Image
             src="/blklight-light.svg"
-            className="!max-w-none mx-auto size-6 dark:invert invert-0"
+            className="!max-w-none mx-auto size-6"
             width="24"
             height="24"
             alt="Ultimate Mercer Logo"

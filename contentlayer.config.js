@@ -1,4 +1,8 @@
 import { defineDocumentType, defineNestedType, makeSource } from "contentlayer2/source-files"
+import rehypePrettyCode from "rehype-pretty-code";
+import remarkGfm from "remark-gfm";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import rehypeSlug from "rehype-slug";
 
 export const Author = defineDocumentType(() => ({
   name: "Author",
@@ -44,6 +48,20 @@ export const Author = defineDocumentType(() => ({
   },
 }));
 
+export const AuthorsArticle = defineNestedType(() => ({
+  name: "AuthorsArticle",
+  fields: {
+    name: {
+      type: "string",
+      required: true,
+    },
+    quote: {
+      type: "string",
+      required: false,
+    },
+  },
+}));
+
 export const Stylesheet = defineNestedType(() => ({
   name: "Stylesheet",
   fields: {
@@ -67,8 +85,27 @@ export const Stylesheet = defineNestedType(() => ({
 
 }))
 
-export const Document = defineDocumentType(() => ({
-  name: "Document",
+export const Tutorial = defineNestedType(() => ({
+  name: "Tutorial",
+  fields: {
+    learningPath: {
+      type: "string",
+      required: false
+    },
+    step: {
+      type: "number",
+      required: false
+    },
+    difficulty: {
+      type: "enum",
+      options: ["iniciante", "intermediário", "avançado"],
+      required: false,
+    },
+  },
+}))
+
+export const Doc = defineDocumentType(() => ({
+  name: "Doc",
   filePathPattern: `documents/**/*.(md|mdx)`,
   contentType: "mdx",
   fields: {
@@ -81,7 +118,7 @@ export const Document = defineDocumentType(() => ({
       type: "string",
       required: false,
     },
-    type: {
+    documentType: {
       type: "enum",
       options: ["article", "project", "tutorial"],
       required: true
@@ -111,41 +148,97 @@ export const Document = defineDocumentType(() => ({
       type: "string",
       required: false,
     },
-    stylesheets: {
+    stylesheet: {
       type: "nested",
-      of: {
-        type: "reference",
-        resolve: Stylesheet,
-      },
+      of: Stylesheet,
+      required: false
+    },
+    tutorial: {
+      type: "nested",
+      of: Tutorial,
+      required: false
     },
     authors: {
       type: "list",
-      of: {
-        type: "nested",
-        of: {
-          type: "reference",
-          resolve: Author,
-        },
-      },
-      required: false,
-    }
+      of: AuthorsArticle,
+      required: true,
+    },
   },
   computedFields: {
     slug: {
       type: "string",
-      resolve: (doc) => doc._raw.flattenedPath
+      resolve: (doc) => `${doc._raw.flattenedPath}`,
     }
   }
 }))
 
+/**
+ * Generates:
+ * {
+ *   id: string
+ *   title: string
+ *   description?: string
+ *   type: "article" | "project" | "tutorial"
+ *   date: Date
+ *   modifiedDate?: Date
+ *   tags?: string[]
+ *   draft: boolean
+ *   cover?: string
+ *   stylesheets?: {
+ *     pageLayout?: string
+ *     cardLayout?: string
+ *     typography?: string
+ *     filter?: string
+ *   }[]
+ *   authors?: {
+ *     id: string
+ *     name: string
+ *     email?: string
+ *     avatar?: string
+ *     twitter?: string
+ *     linkedin?: string
+ *     instagram?: string
+ *   }[]
+ *   slug: string
+ * }
+ */
+
 export default makeSource({
   contentDirPath: "./src/content",
   documentTypes: [
-    Document,
+    Doc,
     Author
   ],
   mdx: {
-    remarkPlugins: [],
-    rehypePlugins: [],
+    remarkPlugins: [remarkGfm],
+    rehypePlugins: [
+      rehypeSlug,
+      [
+        rehypePrettyCode,
+        {
+          theme: "night-owl",
+          onVisitLine(node) {
+            if (node.children.length === 0) {
+              node.children = [{ type: "text", value: " " }]
+            }
+          },
+          onVisitHighlightedLine(node) {
+            node.properties.className.push("line--highlighted")
+          },
+          onVisitHighlightedWord(node) {
+            node.properties.className = ["word--highlighted"]
+          }
+        }
+      ],
+      [
+        rehypeAutolinkHeadings,
+        {
+          properties: {
+            className: ["subheading-anchor"],
+            ariaLabel: "Link para a seção",
+          },
+        },
+      ]
+    ],
   },
 })

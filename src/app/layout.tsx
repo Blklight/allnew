@@ -10,12 +10,16 @@ import {
   Roboto,
   Overpass,
 } from "next/font/google";
-import "./globals.css";
+// import "./globals.css";
+import "../assets/blklight.scss";
 import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/navbar";
 import { DevTools } from "@/components/dev-tools";
 import { Toaster } from "@/components/ui/sonner";
 import DuotoneFilter from "@/components/duotone-filter";
+import { SidebarProvider } from "@/components/ui/sidebar";
+import { IconSidebar } from "@/components/icon-sidebar";
+import { NavToolbar } from "@/components/nav-toolbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -96,10 +100,16 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {/* <div className="relative"> */}
-          {children}
+          <SidebarProvider>
+            <div className="w-full flex flex-row min-h-svh">
+              <IconSidebar />
+              <div className="bg-background shadow-md rounded-lg border flex-1 my-2.5 mr-2.5">
+                <NavToolbar />
+                <div className="pt-2.5 mb-5 px-4">{children}</div>
+              </div>
+            </div>
+          </SidebarProvider>
 
-          {/* </div> */}
           <Toaster />
           <DevTools />
           <DuotoneFilter />
