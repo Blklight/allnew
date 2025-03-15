@@ -11,7 +11,13 @@ import { Button } from "@/components/ui/button";
 import { CalendarClock, Code, Globe, Plus, Router } from "lucide-react";
 import { useRouter } from "next/navigation";
 
+import TextEditor from "@/components/text-editor";
+
 export default function Create() {
+  const handleEditorChange = (content: string) => {
+    console.log("Editor content changed:", content);
+  };
+
   const router = useRouter();
   return (
     <div className="container mx-auto max-w-3xl">
@@ -36,6 +42,12 @@ export default function Create() {
               id="texto"
               placeholder="Escreva seu texto aqui..."
               className="h-80"
+            />
+          </div>
+          <div className="container py-10">
+            <TextEditor
+              onChange={handleEditorChange}
+              initialContent="<h1>Hello World</h1><p>Start editing this document...</p>"
             />
           </div>
           <div className="flex justify-between">
