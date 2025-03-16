@@ -214,7 +214,7 @@ export default function EditorToolbar({ editor }: EditorToolbarProps) {
           <LinkIcon className="h-5 w-5" />
         </ToolbarButton>
       </div>
-      {editor && editor.isActive("codeBlock") && (
+      {/* {editor && editor.isActive("codeBlock") && (
         <div className="px-2 mt-2">
           <p className="text-xs text-muted-foreground mb-1">Language</p>
           <Select
@@ -228,6 +228,36 @@ export default function EditorToolbar({ editor }: EditorToolbarProps) {
             }}
           >
             <SelectTrigger className="w-full h-8 text-xs">
+              <SelectValue placeholder="Select language" />
+            </SelectTrigger>
+            <SelectContent>
+              {codeLanguages.map((lang) => (
+                <SelectItem
+                  key={lang.value}
+                  value={lang.value}
+                  className="text-xs"
+                >
+                  {lang.label}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </div>
+      )} */}
+      {editor && editor.isActive("codeBlock") && (
+        <div className="absolute bottom-4 left-16 z-10 bg-white dark:bg-slate-900 border rounded-md shadow-md p-2">
+          <p className="text-xs text-muted-foreground mb-1">Language</p>
+          <Select
+            value={getCodeLanguage()}
+            onValueChange={(value) => {
+              editor
+                .chain()
+                .focus()
+                .updateAttributes("codeBlock", { language: value })
+                .run();
+            }}
+          >
+            <SelectTrigger className="w-[120px] h-8 text-xs">
               <SelectValue placeholder="Select language" />
             </SelectTrigger>
             <SelectContent>

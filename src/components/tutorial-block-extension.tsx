@@ -18,7 +18,7 @@ const TutorialBlock = Node.create({
   group: "block",
   content: "block+",
   defining: true,
-  isolating: true, // This helps with cursor handling
+  isolating: true,
 
   addCommands() {
     return {
@@ -77,7 +77,7 @@ function TutorialBlockView(props: any) {
     >
       <div className="border rounded-lg shadow-md overflow-hidden">
         {/* Browser-like header */}
-        <div className="flex items-center justify-between bg-muted px-4 py-2 border-b">
+        <div className="flex items-center justify-between bg-blklight-400 px-4 py-2 border-b">
           <div className="flex space-x-2">
             <div className="w-3 h-3 rounded-full bg-red-500"></div>
             <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
@@ -85,7 +85,7 @@ function TutorialBlockView(props: any) {
           </div>
           <div className="flex-1 mx-4">
             <div className="bg-background/80 rounded-md px-3 py-1 text-xs text-center truncate">
-              example.com/tutorial
+              tutorial
             </div>
           </div>
           <div className="flex space-x-2">
@@ -112,9 +112,9 @@ function TutorialBlockView(props: any) {
           </div>
         </div>
 
-        {/* Content area - using NodeViewContent for proper editing */}
-        <div className="p-4 min-h-[150px] bg-white dark:bg-slate-900">
-          <NodeViewContent className="tutorial-content" />
+        {/* Content area - with proper styling for headings and formatted text */}
+        <div className="p-4 min-h-[150px] bg-transparent">
+          <NodeViewContent className="tutorial-content prose prose-lg dark:prose-invert max-w-none" />
         </div>
       </div>
     </NodeViewWrapper>

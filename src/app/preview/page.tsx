@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 
 import * as React from "react";
 import Image from "next/image";
@@ -27,12 +27,18 @@ import {
 
 import { ResponsiveResizable } from "@/components/responsive-resizable";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { getDraftDocument } from "@/services";
+import { allDocs, allAuthors } from "contentlayer/generated";
+import BasicLayout from "@/components/layouts/basic-layout";
+import { MDXComponents } from "@/components/mdx";
+import { ShowArticlePreview } from "@/components/show-article-preview";
+import { PathsSelection } from "@/components/paths-selection";
 
 export default function Preview() {
-  const [isSelectPathsOpen, setIsSelectPathsOpen] = React.useState(false);
-  const [currentArticle, setCurrentArticle] = React.useState<Article | null>(
-    null
-  );
+  // const [isSelectPathsOpen, setIsSelectPathsOpen] = React.useState(false);
+  // const [currentArticle, setCurrentArticle] = React.useState<Article | null>(
+  //   null
+  // );
 
   const tutorial = {
     id: 1,
@@ -67,12 +73,27 @@ export default function Preview() {
     ],
   };
 
+  // const [article, setArticle] = React.useState<any>(null);
+
+  // const [isLoading, setIsLoading] = React.useState(true);
+  // React.useEffect(() => {
+  //   const data = allDocs.find((doc) => doc.draft === true);
+  //   if (data) {
+  //     const author = allAuthors.find(
+  //       (author) => author.name === data.authors[0].name
+  //     );
+  //     setArticle({ doc: data, authordetails: author });
+  //   }
+  //   setIsLoading(false);
+  // }, []);
+
+  // if (isLoading) {
+  //   return <div>Carregando...</div>;
+  // }
+
   return (
     <>
-      <ResponsiveResizable
-        defaultSizes={[40, 60]}
-        className="min-h-[500px] border rounded-md"
-      >
+      <div className="grid gap-5 md:grid-cols-2 grid-cols-1">
         <div className="relative p-4">
           <h1 className="text-3xl font-bold mb-4">Preview</h1>
 
@@ -110,13 +131,14 @@ export default function Preview() {
                 )}
               </div>
               <div className="absolute -top-5 right-4">
-                <Button
+                {/* <Button
                   variant={"secondary"}
                   onClick={() => setIsSelectPathsOpen(true)}
                 >
                   <Route className="mr-2 size-4" />
                   Trilha de aprendizado
-                </Button>
+                </Button> */}
+                <PathsSelection />
               </div>
             </div>
             <div className="border p-4 rounded-md shadow-md relative">
@@ -147,12 +169,12 @@ export default function Preview() {
                   Adicionar a trilha de aprendizado
                 </Button>
               </div> */}
-              <SelectPathsDialog
+              {/* <SelectPathsDialog
                 open={isSelectPathsOpen}
                 onOpenChange={setIsSelectPathsOpen}
                 paths={learningPaths}
                 article={currentArticle}
-              />
+              /> */}
               <div className="flex items-center gap-4 mt-5 ml-auto">
                 <Scheduler />
                 <Button size={"lg"}>
@@ -163,9 +185,17 @@ export default function Preview() {
             </div>
           </div>
         </div>
-
         <div className="p-4">
-          <Frame text="Preview" className="mb-6">
+          <ShowArticlePreview />
+          {/* <Frame text="Preview" className="mb-6">
+            {article?.doc?.body?.code && (
+              <MDXComponents
+                layout={"basic-layout"}
+                doc={article.doc}
+                code={article?.doc?.body?.code}
+              />
+            )}
+
             <div className="space-y-5 px-5 py-5">
               <img
                 src={tutorial.image}
@@ -199,9 +229,16 @@ export default function Preview() {
                 ))}
               </ul>
             </div>
-          </Frame>
+          </Frame> */}
         </div>
-      </ResponsiveResizable>
+      </div>
+
+      {/* <ResponsiveResizable
+        defaultSizes={[40, 60]}
+        className="min-h-[500px] border rounded-md"
+      >
+        
+      </ResponsiveResizable> */}
       {/* <ResizablePanelGroup direction="horizontal">
         <ResizablePanel>
           <div className="relative px-4">

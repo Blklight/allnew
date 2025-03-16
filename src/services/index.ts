@@ -9,6 +9,12 @@ export const rawDocuments = allDocs
     return compareDesc(new Date(a.date), new Date(b.date));
   });
 
+export const draftDocuments = allDocs
+  .filter((doc) => doc.draft === true)
+  .sort((a, b) => {
+    return compareDesc(new Date(a.date), new Date(b.date));
+  });
+
 export const getAuthors = () => {
   return allAuthors;
 };
@@ -59,6 +65,12 @@ export const getDocuments = () => {
   return documents;
 };
 
+export const getDraftDocuments = () => {
+  const documents = Promise.all(fetchDocuments(draftDocuments));
+
+  return documents;
+};
+
 export const getDocument = async (params: any) => {
   console.log("getdocument line 63", params);
   const allDocuments = await Promise.all(fetchDocuments(rawDocuments));
@@ -81,6 +93,28 @@ export const getDocument = async (params: any) => {
 
   let authordetails = await Promise.all(authorPromise);
   debugger;
+  // authordetails = authordetails.flat();
+
+  return { doc, authordetails };
+};
+
+export const getDraftDocument = async (params: any) => {
+  console.log("getdraftdocument line 102", params);
+  const allDocuments = await Promise.all(fetchDocuments(draftDocuments));
+
+  const formattedRoute = `documents/${params?.slug}`;
+
+  const doc = draftDocuments.find((obj) => obj.slug === formattedRoute);
+  console.log("line 108", doc);
+  const authorList = doc?.authors;
+
+  const authorPromise = authorList?.map((author) =>
+    allAuthors.filter((obj) => obj.name === author.name)
+  );
+
+  if (!authorPromise) return;
+
+  let authordetails = await Promise.all(authorPromise);
   // authordetails = authordetails.flat();
 
   return { doc, authordetails };

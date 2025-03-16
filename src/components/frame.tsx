@@ -13,7 +13,7 @@ export const Frame = ({
 }: {
   text?: string;
   className?: string;
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }) => {
   return (
     <section
