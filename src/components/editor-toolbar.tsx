@@ -29,6 +29,13 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "./ui/select";
 
 interface EditorToolbarProps {
   editor: Editor | null;
@@ -39,13 +46,27 @@ export default function EditorToolbar({ editor }: EditorToolbarProps) {
     return null;
   }
 
+  const codeLanguages = [
+    { value: "javascript", label: "JavaScript" },
+    { value: "typescript", label: "TypeScript" },
+    { value: "html", label: "HTML" },
+    { value: "css", label: "CSS" },
+    { value: "python", label: "Python" },
+    { value: "bash", label: "Bash" },
+  ];
+
   const addTutorialBlock = () => {
     editor.chain().focus().setTutorialBlock().run();
   };
 
+  const getCodeLanguage = () => {
+    if (!editor || !editor.isActive("codeBlock")) return "javascript";
+    return editor.getAttributes("codeBlock").language || "javascript";
+  };
+
   return (
     <TooltipProvider>
-      <div className="flex flex-col py-4 px-2 border-r h-full min-h-[500px] bg-slate-50 dark:bg-slate-900 w-16">
+      <div className="flex flex-col py-4 px-2 border rounded-md h-full min-h-[500px] bg-background w-16">
         <ToolbarButton
           onClick={() =>
             editor.chain().focus().toggleHeading({ level: 3 }).run()
@@ -193,6 +214,36 @@ export default function EditorToolbar({ editor }: EditorToolbarProps) {
           <LinkIcon className="h-5 w-5" />
         </ToolbarButton>
       </div>
+      {editor && editor.isActive("codeBlock") && (
+        <div className="px-2 mt-2">
+          <p className="text-xs text-muted-foreground mb-1">Language</p>
+          <Select
+            value={getCodeLanguage()}
+            onValueChange={(value) => {
+              editor
+                .chain()
+                .focus()
+                .updateAttributes("codeBlock", { language: value })
+                .run();
+            }}
+          >
+            <SelectTrigger className="w-full h-8 text-xs">
+              <SelectValue placeholder="Select language" />
+            </SelectTrigger>
+            <SelectContent>
+              {codeLanguages.map((lang) => (
+                <SelectItem
+                  key={lang.value}
+                  value={lang.value}
+                  className="text-xs"
+                >
+                  {lang.label}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </div>
+      )}
     </TooltipProvider>
   );
 }

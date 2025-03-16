@@ -19,7 +19,7 @@ import {
 import { cn } from "@/lib/utils";
 
 const typographyOptions = [
-  { value: "inter", label: "Inter (Default)" },
+  { value: "inter", label: "Inter (Padrão)" },
   { value: "barlow", label: "Barlow" },
   { value: "jetbrains", label: "JetBrains Mono" },
   { value: "serif", label: "Serif" },
@@ -43,15 +43,15 @@ export default function TypographySelector({
           className="w-[180px] justify-between"
         >
           {typographyOptions.find((option) => option.value === value)?.label ||
-            "Select font..."}
+            "Selecionar fonte..."}
           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-[180px] p-0">
         <Command>
-          <CommandInput placeholder="Search font..." />
+          <CommandInput placeholder="Pesquisar fonte..." />
           <CommandList>
-            <CommandEmpty>No font found.</CommandEmpty>
+            <CommandEmpty>Não encontrado.</CommandEmpty>
             <CommandGroup>
               {typographyOptions.map((option) => (
                 <CommandItem
