@@ -17,7 +17,9 @@ import { ariaLabel } from "@/utils/socials";
 export const Author = () => {
   return (
     <div className="my-6">
-      <h3 className="mb-3 md:text-left text-center">Escrito por:</h3>
+      <h3 className="mb-3 md:text-left text-center text-[32px] font-bold">
+        Escrito por:
+      </h3>
       <div className="flex md:flex-row gap-6 flex-col items-center">
         <img
           src={"https://i.imgur.com/Qw6LuRE.jpg"}

@@ -19,7 +19,7 @@ export const TutorialFrame = ({
   return (
     <section
       id="tutorial-frame"
-      className="grid gap-4 md:grid-cols-2 grid-cols-1 !mb-6"
+      className="grid gap-4 lg:grid-cols-2 grid-cols-1 !mb-6"
     >
       <div
         className={cn("border rounded-md shadow-md overflow-hidden", className)}

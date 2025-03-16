@@ -1,0 +1,128 @@
+---
+title: "Introdução ao Desenvolvimento Front-End"
+description: "Aprenda os conceitos fundamentais do desenvolvimento front-end e crie sua primeira página web moderna."
+type: "tutorial"
+date: "2025-03-15 14:42"
+tags:
+  - front-end
+  - html
+  - css
+  - javascript
+  - react
+draft: true
+cover: "https://i.imgur.com/Qw6LuRE.jpg"
+stylesheet:
+  pageLayout: ""
+  cardLayout: "article-card"
+  typography: "serif-font"
+  filter: ""
+tutorial:
+  lerningPath: ""
+  step:
+  difficulty: "iniciante"
+authors:
+  - name: Ultimate Mercer
+    quote:
+---
+
+# 🎨 Introdução ao Desenvolvimento Front-End
+
+O **desenvolvimento front-end** é a área da programação responsável pela interface e experiência visual de aplicações web. Ele envolve tecnologias como **HTML, CSS e JavaScript**, além de frameworks modernos como **React, Vue e Svelte**.
+
+Neste tutorial, vamos explorar os fundamentos do front-end e criar uma **página web interativa**, passo a passo.
+
+## 🛠️ **Tecnologias Essenciais**
+
+### 1️⃣ **HTML (HyperText Markup Language)**
+
+Define a estrutura e os elementos da página.
+
+### 2️⃣ **CSS (Cascading Style Sheets)**
+
+Adiciona estilos e layout, tornando a interface atraente.
+
+### 3️⃣ **JavaScript**
+
+Permite interatividade, como animações e manipulação do DOM.
+
+### 4️⃣ **Frameworks e Bibliotecas**
+
+✅ **React** → Criar interfaces dinâmicas e componentes reutilizáveis.  
+✅ **TailwindCSS** → Estilização rápida e eficiente com classes utilitárias.  
+✅ **Next.js** → Framework que melhora performance e SEO.
+
+<TutorialFrame title="Tutorial">
+
+## 🚀 **Criando uma Página Web do Zero**
+
+Vamos criar uma página simples usando **HTML, CSS e JavaScript**.
+
+### 📝 **Passo 1: Estrutura HTML**
+
+Crie um arquivo `index.html` e adicione:
+
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minha Primeira Página</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Bem-vindo ao Front-End!</h1>
+      <button id="btn">Clique Aqui</button>
+    </header>
+    <script src="script.js"></script>
+  </body>
+</html>
+```
+
+### 📝**Passo 2: Estilizando com CSS**
+
+Crie um arquivo `styles.css` e adicione estilos básicos:
+
+```css
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f4f4f4;
+}
+
+header {
+  margin-top: 50px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+```
+
+### ⚡ **Passo 3: Adicionando Interatividade com JavaScript**
+
+Crie um arquivo `script.js` e implemente um evento de clique:
+
+```js
+document.getElementById("btn").addEventListener("click", function () {
+  alert("Você clicou no botão!");
+});
+```
+
+</TutorialFrame>
+
+## 🔥 Próximos Passos
+
+- ✔ Aprender sobre Flexbox e Grid para layouts avançados.
+- ✔ Explorar JavaScript moderno (ES6+), como funções assíncronas e Promises.
+- ✔ Criar um projeto real usando React e TailwindCSS.

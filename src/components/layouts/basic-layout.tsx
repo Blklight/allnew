@@ -65,8 +65,10 @@ const BasicLayout = ({ doc, children }: any) => {
             ))}
           </div>
         )}
-        <Author />
       </article>
+      <div className="article-grid">
+        <Author />
+      </div>
     </section>
   );
 };

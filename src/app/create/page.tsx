@@ -15,6 +15,7 @@ import { useRouter } from "next/navigation";
 import EnhancedTextEditor from "@/components/enhanced-text-editor";
 import { Toaster } from "sonner";
 import { Separator } from "@/components/ui/separator";
+import { defaultEditorValue } from "@/components/dev-tools";
 
 export default function Create() {
   const handleEditorChange = (content: string) => {
@@ -57,33 +58,7 @@ export default function Create() {
         <EnhancedTextEditor
           documentTitle="Conteúdo"
           onChange={handleEditorChange}
-          initialContent={`
-          <h1>Getting Started with Our Platform</h1>
-          <p>Welcome to our documentation. This guide will help you get started with our platform.</p>
-          
-          <h2>Installation</h2>
-          <p>You can install our package using npm:</p>
-          
-          <pre><code class="language-bash">npm install @acme/awesome-package</code></pre>
-          
-          <h2>Basic Usage</h2>
-          <p>Here's a simple example of how to use our main component:</p>
-          
-          <pre><code class="language-javascript">
-import { AwesomeComponent } from '@acme/awesome-package';
-
-function App() {
-  return (
-    <AwesomeComponent 
-      title="Hello World"
-      description="This is an example"
-    />
-  );
-}
-          </code></pre>
-          
-          <p>That's it! You're now ready to start building amazing things with our platform.</p>
-        `}
+          initialContent={defaultEditorValue}
         />
         <Toaster />
       </div>

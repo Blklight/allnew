@@ -18,6 +18,8 @@ import TutorialBlock from "./tutorial-block-extension";
 import FloatingToolbar from "./floating-toolbar";
 import { Check } from "lucide-react";
 
+import initialValue from "@/utils/tip-tap-initial.json";
+
 // Create lowlight instance
 const lowlight = createLowlight(common);
 
@@ -108,12 +110,13 @@ export default function EnhancedTextEditor({
         },
       }),
     ],
-    content:
-      initialContent ||
-      `
-      <h1>Start writing...</h1>
-      <p>This is a rich text editor with a vertical toolbar.</p>
-    `,
+    // content:
+    //   initialContent ||
+    //   `
+    //   <h1>Start writing...</h1>
+    //   <p>This is a rich text editor with a vertical toolbar.</p>
+    // `,
+    content: initialValue,
     editorProps: {
       attributes: {
         class:

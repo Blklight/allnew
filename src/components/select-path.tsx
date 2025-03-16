@@ -30,7 +30,7 @@ export function SelectPathsDialog({
   paths,
   article,
 }: SelectPathsDialogProps) {
-  const [selectedPaths, setSelectedPaths] = useState<string[]>([]);
+  const [selectedPaths, setSelectedPaths] = useState<string[]>(["1"]);
   const [searchTerm, setSearchTerm] = useState("");
 
   const filteredPaths = paths.filter(

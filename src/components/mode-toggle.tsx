@@ -20,8 +20,8 @@ export function ModeToggle() {
       if (resolvedTheme === "dark")
         return (
           <>
-            <Moon className="h-[1.2rem] w-[1.2rem] transition-all" /> Modo
-            Escuro
+            <Moon className="h-[1.2rem] w-[1.2rem] transition-all" />
+            <span className="md:block hidden">Modo Escuro</span>
           </>
         );
       if (resolvedTheme === "book")
@@ -40,7 +40,8 @@ export function ModeToggle() {
     if (theme === "dark")
       return (
         <>
-          <Moon className="h-[1.2rem] w-[1.2rem] transition-all" /> Modo Escuro
+          <Moon className="h-[1.2rem] w-[1.2rem] transition-all" />{" "}
+          <span className="md:block hidden">Modo Escuro</span>
         </>
       );
     if (theme === "book")

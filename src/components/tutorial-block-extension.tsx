@@ -3,10 +3,12 @@
 
 import { cn } from "@/lib/utils";
 import { Node, mergeAttributes } from "@tiptap/core";
-import { ReactNodeViewRenderer } from "@tiptap/react";
+import {
+  ReactNodeViewRenderer,
+  NodeViewWrapper,
+  NodeViewContent,
+} from "@tiptap/react";
 import { useState } from "react";
-import { NodeViewWrapper } from "@tiptap/react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import { Maximize2, Minimize2, X } from "lucide-react";
 
@@ -16,13 +18,13 @@ const TutorialBlock = Node.create({
   group: "block",
   content: "block+",
   defining: true,
+  isolating: true, // This helps with cursor handling
 
   addCommands() {
     return {
-      // ...this.parent?.(),
       setTutorialBlock:
         () =>
-        ({ commands }: any) => {
+        ({ commands }) => {
           return commands.insertContent({
             type: this.name,
             content: [
@@ -75,7 +77,7 @@ function TutorialBlockView(props: any) {
     >
       <div className="border rounded-lg shadow-md overflow-hidden">
         {/* Browser-like header */}
-        <div className="flex items-center justify-between bg-blklight-400 px-4 py-2 border-b">
+        <div className="flex items-center justify-between bg-muted px-4 py-2 border-b">
           <div className="flex space-x-2">
             <div className="w-3 h-3 rounded-full bg-red-500"></div>
             <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
@@ -110,42 +112,10 @@ function TutorialBlockView(props: any) {
           </div>
         </div>
 
-        {/* Content area */}
-        <Tabs defaultValue="preview" className="w-full">
-          <div className="flex items-center justify-between px-4 py-2 border-b">
-            <TabsList>
-              <TabsTrigger value="preview">Preview</TabsTrigger>
-              <TabsTrigger value="code">Code</TabsTrigger>
-            </TabsList>
-          </div>
-
-          <TabsContent value="preview" className="p-4 min-h-[200px]">
-            <div className="tutorial-content">
-              {/* Safe way to render the content DOM */}
-              <div ref={props.contentRef}></div>
-            </div>
-          </TabsContent>
-
-          <TabsContent value="code" className="border-t">
-            <div className="bg-muted/50 p-4 font-mono text-sm overflow-auto min-h-[200px]">
-              <pre className="text-xs">
-                {`// This is a simulated code editor
-import React from 'react';
-
-function TutorialExample() {
-  return (
-    <div className="example">
-      <h2>Hello World</h2>
-      <p>This is a tutorial example</p>
-    </div>
-  );
-}
-
-export default TutorialExample;`}
-              </pre>
-            </div>
-          </TabsContent>
-        </Tabs>
+        {/* Content area - using NodeViewContent for proper editing */}
+        <div className="p-4 min-h-[150px] bg-white dark:bg-slate-900">
+          <NodeViewContent className="tutorial-content" />
+        </div>
       </div>
     </NodeViewWrapper>
   );

@@ -10,8 +10,8 @@ import {
   Roboto,
   Overpass,
 } from "next/font/google";
-// import "./globals.css";
-import "../assets/blklight.scss";
+import "./globals.css";
+// import "../assets/blklight.scss";
 import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/navbar";
 import { DevTools } from "@/components/dev-tools";

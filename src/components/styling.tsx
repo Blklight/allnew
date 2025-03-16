@@ -74,7 +74,7 @@ export default function CardSelector() {
         </p>
       </div>
 
-      <div className="w-full max-w-xs">
+      <div className="w-full">
         <Select
           defaultValue="basic"
           onValueChange={(value) => setSelectedLayout(value)}
@@ -101,7 +101,7 @@ export default function CardSelector() {
 
 export function BasicCard({ data }: { data: CardData }) {
   return (
-    <Card className="w-full">
+    <Card className="w-full rounded-md">
       <CardHeader>
         <div className="flex justify-between items-start">
           <div>
@@ -139,7 +139,7 @@ export function BasicCard({ data }: { data: CardData }) {
 
 export function SocialCard({ data }: { data: CardData }) {
   return (
-    <Card className="w-full overflow-hidden py-4 gap-4">
+    <Card className="w-full rounded-md overflow-hidden py-4 gap-4">
       <CardHeader className="pb-0">
         <div className="flex items-center gap-3">
           <Avatar>
@@ -197,7 +197,7 @@ export function SocialCard({ data }: { data: CardData }) {
 export function BackgroundCard({ data }: { data: CardData }) {
   const router = useRouter();
   return (
-    <Card className="w-full overflow-hidden relative h-[400px] group">
+    <Card className="w-full rounded-md overflow-hidden relative h-[400px] group">
       <div
         className="absolute inset-0 bg-cover bg-center z-0 transition-transform duration-500 group-hover:scale-110 grayscale"
         style={{
@@ -258,12 +258,12 @@ export const Styling = () => {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button variant={"outline"}>
+        <Button variant={"secondary"}>
           {" "}
-          <Palette className="mr-2 size-4" /> Estilo da publicação
+          <Palette className="mr-2 size-4" /> Estilização
         </Button>
       </SheetTrigger>
-      <SheetContent className="w-[500px] sm:w-[600px] sm:max-w-[600px] max-w-[calc(100vw-32px)] max-h-[calc(100vh-32px)] xl:max-w-[600px] p-8 m-2.5 overflow-y-auto border rounded-md">
+      <SheetContent className="w-[500px] sm:w-[calc(100vw-32px)] sm:max-w-[calc(100vw-32px)] max-w-[calc(100vw-32px)] max-h-[calc(100vh-32px)] xl:max-w-[calc(100vw-32px)] p-8 m-2.5 overflow-y-auto border rounded-md">
         <CardSelector />
       </SheetContent>
     </Sheet>

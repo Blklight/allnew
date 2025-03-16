@@ -13,7 +13,7 @@ import { Categoring } from "@/components/categories";
 import { Styling } from "@/components/styling";
 import { Scheduler } from "@/components/scheduler";
 import { Button } from "@/components/ui/button";
-import { Globe, Route, Tags } from "lucide-react";
+import { Globe, Palette, Route, Tags } from "lucide-react";
 import { SelectPathsDialog } from "@/components/select-path";
 import { learningPaths } from "@/components/dev-tools";
 import type { Article } from "@/lib/types";
@@ -24,6 +24,9 @@ import {
   ResizablePanel,
   ResizablePanelGroup,
 } from "@/components/ui/resizable";
+
+import { ResponsiveResizable } from "@/components/responsive-resizable";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function Preview() {
   const [isSelectPathsOpen, setIsSelectPathsOpen] = React.useState(false);
@@ -66,7 +69,140 @@ export default function Preview() {
 
   return (
     <>
-      <ResizablePanelGroup direction="horizontal">
+      <ResponsiveResizable
+        defaultSizes={[40, 60]}
+        className="min-h-[500px] border rounded-md"
+      >
+        <div className="relative p-4">
+          <h1 className="text-3xl font-bold mb-4">Preview</h1>
+
+          <div className="flex flex-col space-y-10 sticky top-0 py-5">
+            <div className="border p-4 rounded-md shadow-md relative">
+              <h5 className="text-[20px] font-bold mb-2">
+                Categorias do tutorial
+              </h5>
+              <div className="flex flex-wrap gap-2 mb-4">
+                {Array.from(["Javascript", "React", "Tutorial"]).map(
+                  (item, index) => (
+                    <Badge key={index} className="!text-base">
+                      <Tags className="mr-1 !size-4" />
+                      {item}
+                    </Badge>
+                  )
+                )}
+              </div>
+              <div className="absolute -top-5 right-4">
+                <Categoring />
+              </div>
+            </div>
+            <div className="border p-4 rounded-md shadow-md relative">
+              <h5 className="text-[20px] font-bold mb-2">
+                Trilha de aprendizado
+              </h5>
+              <div className="flex flex-wrap gap-2 mb-4">
+                {Array.from(["Desenvolvimento Front-end"]).map(
+                  (item, index) => (
+                    <Badge key={index} className="!text-base">
+                      <Route className="mr-1 !size-4" />
+                      {item}
+                    </Badge>
+                  )
+                )}
+              </div>
+              <div className="absolute -top-5 right-4">
+                <Button
+                  variant={"secondary"}
+                  onClick={() => setIsSelectPathsOpen(true)}
+                >
+                  <Route className="mr-2 size-4" />
+                  Trilha de aprendizado
+                </Button>
+              </div>
+            </div>
+            <div className="border p-4 rounded-md shadow-md relative">
+              <h5 className="text-[20px] font-bold mb-2">Estilização</h5>
+              <div className="flex flex-wrap gap-2 mb-4">
+                {Array.from(["Javascript", "React", "Tutorial"]).map(
+                  (item, index) => (
+                    <Badge key={index} className="!text-base">
+                      <Palette className="mr-1 size-4" />
+                      {item}
+                    </Badge>
+                  )
+                )}
+              </div>
+              <div className="absolute -top-5 right-4">
+                <Styling />
+              </div>
+            </div>
+            <div className="grid w-full items-center gap-1.5">
+              {/* <div className="flex flex-wrap items-center gap-4 mt-4">
+                <Categoring />
+
+                <Button
+                  variant={"outline"}
+                  onClick={() => setIsSelectPathsOpen(true)}
+                >
+                  <Route className="mr-2 size-4" />
+                  Adicionar a trilha de aprendizado
+                </Button>
+              </div> */}
+              <SelectPathsDialog
+                open={isSelectPathsOpen}
+                onOpenChange={setIsSelectPathsOpen}
+                paths={learningPaths}
+                article={currentArticle}
+              />
+              <div className="flex items-center gap-4 mt-5 ml-auto">
+                <Scheduler />
+                <Button size={"lg"}>
+                  <Globe className="mr-2 size-4" />
+                  Publicar
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="p-4">
+          <Frame text="Preview" className="mb-6">
+            <div className="space-y-5 px-5 py-5">
+              <img
+                src={tutorial.image}
+                alt={tutorial.title}
+                className="w-full h-64 object-cover rounded-xl grayscale"
+              />
+              <h2 className="text-3xl font-bold">{tutorial.title}</h2>
+              <p className="text-muted-foreground">{tutorial.description}</p>
+              <p>
+                <span className="font-bold">Categoria:</span>{" "}
+                {tutorial.category}
+              </p>
+              <p>
+                <span className="font-bold">Dificuldade:</span>{" "}
+                {tutorial.difficulty}
+              </p>
+              <ul className="list-disc pl-6">
+                {tutorial.steps.map((step, index) => (
+                  <li key={index}>
+                    <h3 className="font-bold">{step.title}</h3>
+                    <p className="mb-2">{step.content}</p>
+                    {step.code && (
+                      <pre className="bg-slate-800 text-white p-4 rounded-lg mb-4">
+                        <code>{step.code}</code>
+                      </pre>
+                    )}
+                    {step.note && (
+                      <p className="text-muted-foreground">{step.note}</p>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Frame>
+        </div>
+      </ResponsiveResizable>
+      {/* <ResizablePanelGroup direction="horizontal">
         <ResizablePanel>
           <div className="relative px-4">
             <h1 className="text-3xl font-bold mb-4">Preview</h1>
@@ -160,7 +296,7 @@ export default function Preview() {
             </Frame>
           </div>
         </ResizablePanel>
-      </ResizablePanelGroup>
+      </ResizablePanelGroup> */}
       {/* <div className="grid gap-5 md:grid-cols-2 grid-cols-1">
         <div className="">
           <Frame text="Preview" className="mb-6">

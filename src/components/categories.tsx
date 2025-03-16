@@ -51,8 +51,8 @@ export const Categoring = () => {
       <Sheet>
         <SheetTrigger asChild>
           <Button variant={"secondary"} type="button">
-            <Tags className="mr-2 size-4" />
-            Escolher categorias da publicação
+            <Tags className="mr-1 size-4" />
+            Escolher categorias
           </Button>
         </SheetTrigger>
         <SheetContent className="w-[500px] sm:w-[600px] sm:max-w-[600px] max-w-[calc(100vw-32px)] max-h-[calc(100vh-32px)] xl:max-w-[600px] p-8 m-2.5 overflow-y-auto border rounded-md">
