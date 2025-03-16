@@ -93,7 +93,7 @@ export default function Preview() {
 
   return (
     <>
-      <div className="grid gap-5 md:grid-cols-2 grid-cols-1">
+      <div className="grid gap-5 lg:grid-cols-2 grid-cols-1">
         <div className="relative p-4">
           <h1 className="text-3xl font-bold mb-4">Preview</h1>
 
