@@ -31,7 +31,7 @@ export const Frame = ({
           </div>
         </div>
       </div>
-      <div className="w-full px-2 pb-2 min-h-svh overflow-y-auto scroll-smooth">
+      <div className="w-full px-2 p-5 min-h-svh overflow-y-auto scroll-smooth">
         {children}
       </div>
     </section>
