@@ -22,17 +22,18 @@ export const TutorialFrame = ({
       className="grid gap-4 md:grid-cols-2 grid-cols-1 !mb-6"
     >
       <div
-        className={cn(
-          "border border-dark dark:border-light rounded-md w-full shadow-md overflow-hidden self-start",
-          className
-        )}
+        className={cn("border rounded-md shadow-md overflow-hidden", className)}
       >
-        <div className="w-full h-16 bg-dark dark:bg-light rounded-t-md flex items-center gap-2 px-2.5">
-          <div className="rounded-md p-2.5 bg-bluesky-500 text-light">
-            <GraduationCap className="w-5 h-5" />
+        <div className="flex items-center justify-between bg-bluesky-100 dark:bg-bluesky-800 px-4 py-2 border-b">
+          <div className="flex space-x-2">
+            <div className="w-3 h-3 rounded-full bg-red-500"></div>
+            <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+            <div className="w-3 h-3 rounded-full bg-green-500"></div>
           </div>
-          <div className="flex w-full rounded-md bg-light dark:bg-dark px-2 py-1.5 border">
-            {title}
+          <div className="flex-1 mx-4">
+            <div className="bg-background/80 rounded-md px-3 py-1 text-sm text-center truncate">
+              {title}
+            </div>
           </div>
         </div>
         <div className="w-full py-2.5 px-5">{children}</div>
