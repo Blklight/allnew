@@ -75,7 +75,7 @@ function TutorialBlockView(props: any) {
     >
       <div className="border rounded-lg shadow-md overflow-hidden">
         {/* Browser-like header */}
-        <div className="flex items-center justify-between bg-muted px-4 py-2 border-b">
+        <div className="flex items-center justify-between bg-blklight-400 px-4 py-2 border-b">
           <div className="flex space-x-2">
             <div className="w-3 h-3 rounded-full bg-red-500"></div>
             <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
