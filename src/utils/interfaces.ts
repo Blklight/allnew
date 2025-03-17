@@ -50,7 +50,7 @@ export type DocumentCard = {
     steps?: number;
     difficulty?: string;
   };
-  stylesheets?: {
+  stylesheet?: {
     pageLayout?: string;
     cardLayout?: string;
     typography?: string;

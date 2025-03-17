@@ -35,31 +35,20 @@ export default async function Home() {
         src={"https://i.imgur.com/xDEd3HH.jpg"}
         alt="Image"
         className="w-full h-[500px] object-cover !bg-dark-100 dark:!bg-muted mb-4 rounded-lg "
+        style={{ filter: "url(#blklightBlueskyWhiteBlack)" }}
       />
 
       <div>
-        <h3 className="text-3xl font-bold mb-2">Tutoriais</h3>
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 mb-4">
-          {Array.from({ length: 3 }).map((_, index) => (
-            <BackgroundCard key={index} data={cardData} />
-          ))}
-        </div>
+        <h3 className="text-3xl font-bold mb-4">Mais recentes</h3>
       </div>
-      <div className="">
-        <Skeleton className="w-80 h-10 !bg-dark-100 dark:!bg-muted mb-4" />
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 mb-4">
-          <Skeleton className="w-full h-72 !bg-dark-100 dark:!bg-muted" />
-          <Skeleton className="w-full h-72 !bg-dark-100 dark:!bg-muted" />
-          <Skeleton className="w-full h-72 !bg-dark-100 dark:!bg-muted" />
-        </div>
-      </div>
+
       <div className="grid md:grid-cols-3 grid-cols-1 gap-4 mb-4">
         {/* <ArticleCard data={cardData} /> */}
         {/* <NewBackgroundCard data={} /> */}
-        <BasicCard data={cardData} />
+        {/* <BasicCard data={cardData} />
         <SocialCard data={cardData} />
-        <BackgroundCard data={cardData} />
-        <SimpleCard data={cardData} />
+        <BackgroundCard data={cardData} /> */}
+        {/* <SimpleCard data={cardData} /> */}
         {data.map((doc) => {
           console.log(doc);
           return (

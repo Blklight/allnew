@@ -28,9 +28,9 @@ const MagentaWhiteBlack = () => {
         {/* Mapeia tons claros para a cor oklch(70.488% .19894 45.767) */}
         <feComponentTransfer in="colormatrix" result="componentTransfer">
           {/* Magenta branco e preto */}
-          {/* <feFuncR type="table" tableValues="0.0706 1 0.9686" />
+          <feFuncR type="table" tableValues="0.0706 1 0.9686" />
           <feFuncG type="table" tableValues="0.0706 0.1608 0.9686" />
-          <feFuncB type="table" tableValues="0.0706 1 0.9686" /> */}
+          <feFuncB type="table" tableValues="0.0706 1 0.9686" />
 
           <feFuncA type="table" tableValues="0 1" />
         </feComponentTransfer>

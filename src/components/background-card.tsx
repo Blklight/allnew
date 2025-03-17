@@ -1,5 +1,6 @@
 "use client";
 
+import * as React from "react";
 import { BarChart, Bookmark, Clock, ExternalLink, Share } from "lucide-react";
 import { Button } from "./ui/button";
 import Link from "next/link";
@@ -12,6 +13,9 @@ import { cn } from "@/lib/utils";
 const styles = {
   tutorial: {
     title: "text-dark",
+    color: "text-orange-500",
+    bg: "",
+    underline: "bg-orange-500",
     background: "bg-orange-500 text-dark",
     difficultyBg: "bg-orange",
     difficultyColor: "text-dark",
@@ -20,19 +24,25 @@ const styles = {
   },
   article: {
     title: "text-light",
+    color: "text-cyber-yellow-500",
+    bg: "",
+    underline: "bg-cyber-yellow-500",
     background: "bg-cyber-yellow-500 text-dark",
     // difficultyBg: "bg-orange",
     // difficultyColor: "text-dark",
     tags: "bg-dark text-cyber-yellow-500",
-    filter: "#yellowBlack",
+    filter: "#yellowWhiteBlack",
   },
   project: {
     title: "text-light",
-    background: "bg-cyber-yellow-500 text-dark",
+    color: "text-magenta-400",
+    bg: "",
+    underline: "bg-magenta-400",
+    background: "bg-magenta-500 text-dark",
     // difficultyBg: "bg-orange",
     // difficultyColor: "text-dark",
-    tags: "bg-dark text-cyber-yellow-500",
-    filter: "#magentaBlack",
+    tags: "bg-magenta-500 text-dark",
+    filter: "#magentaWhite",
   },
 };
 
@@ -43,24 +53,38 @@ export const BackgroundCard = ({
   data: DocumentCard;
   authors: any;
 }) => {
+  const [cardStyles, setCardStyles] = React.useState<any>(
+    styles[data.documentType]
+  );
   const typeManager = (type: string) => {
     if (type === "tutorial") return "Tutorial";
     if (type === "article") return "Artigo";
     if (type === "project") return "Projeto";
   };
+
+  // React.useEffect(() => {
+  //   setCardStyles(styles[data.documentType]);
+  // }, []);
+
+  // const cardStyles = styles[data.documentType];
   return (
-    <div className="relative flex self-start min-w-0 flex-col bg-clip-border bg-light rounded-md min-h-80 overflow-hidden group">
+    <div className="relative flex self-start min-w-0 flex-col bg-clip-border bg-light rounded-md shadow-md min-h-80 overflow-hidden group">
       <img
         src={data.cover || "https://i.imgur.com/yb5WVlW.jpg"}
         alt={data.title}
-        className="w-full min-h-[475px] max-h-[650px] object-cover rounded-md group-hover:scale-110 transition-transform duration-500"
-        style={{ filter: "url(#duotoneFilter)" }}
+        className="w-full min-h-[525px] max-h-[650px] object-cover rounded-md group-hover:scale-110 transition-transform duration-500"
+        style={{ filter: `url(${cardStyles.filter})` }}
       />
 
       <div className="absolute top-0 left-0 right-0 bottom-0 p-4 rounded-md flex flex-col bg-gradient-to-b from-transparent from-40% to-black/90">
         <div className="flex justify-between mb-2.5">
           <div className="flex gap-2">
-            <div className="flex items-center px-2 py-0.5 h-9 bg-orange-500 text-dark rounded-md capitalize">
+            <div
+              className={cn(
+                "flex items-center px-2 py-0.5 h-9 bg-orange-500 text-dark rounded-md shadow-md capitalize",
+                cardStyles.tags
+              )}
+            >
               {typeManager(data.documentType)}
             </div>
             {data.tutorial?.difficulty && (
@@ -73,7 +97,10 @@ export const BackgroundCard = ({
 
           <Button
             size="icon"
-            className="bg-orange-500 text-dark hover:text-light hover:bg-blklight-500 "
+            className={cn(
+              "hover:text-light hover:bg-blklight-500",
+              cardStyles.background
+            )}
           >
             <Bookmark className="size-5" />
           </Button>
@@ -93,25 +120,39 @@ export const BackgroundCard = ({
           {data.description}
         </p> */}
         <div className="mt-auto">
-          <Link href={`${data.slug}`} className="hover:underline">
+          <Link
+            href={`${data.slug}`}
+            className={cn("hover:underline", cardStyles.underline)}
+          >
             <h4
               className={cn(
-                "text-[24px] font-barlow font-bold",
-                data.stylesheets?.typography
+                "text-[24px] font-barlow font-bold mb-2",
+                data.stylesheet?.typography
               )}
             >
-              {data.title}
+              <span className={cn("marker-line bg-dark", cardStyles.color)}>
+                {data.title}
+              </span>
             </h4>
           </Link>
-          <p className={cn("mb-4", data.stylesheets?.typography)}>
-            {data.description}
+          <p
+            className={cn(
+              "mb-4",
+              data.stylesheet?.typography === "serif-font"
+                ? "eb-serif-font"
+                : data.stylesheet?.typography
+            )}
+          >
+            <span className={cn("marker-line bg-dark !py-1", cardStyles.color)}>
+              {data.description}
+            </span>
           </p>
           <div className="flex flex-wrap gap-2 mb-3">
             {data.tags?.map((cat, index) => (
               <Badge
                 key={index}
                 variant="secondary"
-                className="bg-dark text-orange-500 !rounded-md capitalize"
+                className={cn("!rounded-md capitalize", cardStyles.tags)}
               >
                 {cat.trim()}
               </Badge>
@@ -133,8 +174,12 @@ export const BackgroundCard = ({
               ))}
             </div>
             <div>
-              <div className="flex items-center text-xs text-dark">
-                <span className="text-light">13 Mar, 2025</span>
+              <div className="flex items-center text-xs">
+                <span
+                  className={cn("marker-line bg-dark !py-1", cardStyles.color)}
+                >
+                  13 Mar 2025
+                </span>
               </div>
             </div>
           </div>
@@ -158,15 +203,27 @@ export const BackgroundCard = ({
           <div className="flex items-center justify-between">
             <Button
               size="sm"
-              className="flex gap-1 bg-dark text-orange-500 hover:bg-blklight-500 hover:text-light"
+              className={cn(
+                "flex gap-1 hover:bg-blklight-500 hover:text-light",
+                cardStyles.background
+              )}
             >
               <Share className="h-4 w-4" /> Compartilhar
             </Button>
             <Button
               size="sm"
-              className="flex gap-2 bg-dark text-orange-500 hover:bg-blklight-500 hover:text-light"
+              className={cn(
+                "flex gap-1  hover:bg-blklight-500 hover:text-light",
+                cardStyles.background
+              )}
+              asChild
             >
-              <ExternalLink className="h-4 w-4" /> Ler tutorial
+              <Link href={`${data.slug}`} className="flex items-center gap-1">
+                <ExternalLink className="h-4 w-4" /> Ler{" "}
+                <span className="lowercase">
+                  {typeManager(data.documentType)}
+                </span>
+              </Link>
             </Button>
           </div>
         </div>

@@ -29,7 +29,7 @@ export const frontmatter = (doc: DocumentCard) => {
     tags: doc.tags,
     draft: doc.draft,
     authors: doc.authors,
-    stylesheets: doc.stylesheets,
+    stylesheet: doc.stylesheet,
     documentType: doc.documentType,
     tutorial: doc.tutorial,
     slug: doc.slug,

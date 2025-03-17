@@ -33,7 +33,7 @@ export const LoginButton = () => {
         Login
       </Button>
       <Sheet open={openSheet} onOpenChange={setOpenSheet}>
-        <SheetContent className="w-[400px] sm:w-[500px] sm:max-w-[500px] max-w-[calc(100vw-32px)] max-h-[calc(100vh-32px)] xl:max-w-[500px] p-8 m-2.5 overflow-y-auto border rounded-md">
+        <SheetContent className="w-[400px] sm:w-[500px] sm:max-w-[500px] max-w-[calc(100vw-32px)] max-h-[calc(100vh-32px)] xl:max-w-[500px] p-8 m-2.5 overflow-y-auto border rounded-md background-texture">
           <LoginFormDrawer shouldOpenSheet={(value) => setOpenSheet(value)}>
             <Skeleton className="w-full h-48 !bg-dark-100 dark:!bg-muted" />
           </LoginFormDrawer>

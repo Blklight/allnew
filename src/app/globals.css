@@ -399,7 +399,7 @@
 }
 
 .main-article {
-  .serif {
+  .serif-font {
     h1,
     h2,
     h3,
@@ -415,20 +415,25 @@
   }
 }
 
-.serif-font {
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: "Playfair Display", serif !important;
-  }
+.barlow-font {
+  font-family: "Barlow", sans-serif !important;
+}
 
-  p,
-  li {
-    font-family: "EB Garamond", serif !important;
-  }
+.jetbrains-font {
+  font-family: "JetBrains Mono", monospace !important;
+}
+
+.serif-font {
+  font-family: "Playfair Display", serif !important;
+}
+
+.eb-serif-font {
+  font-family: "EB Garamond", serif !important;
+}
+
+.serif-font p,
+.serif-font li {
+  font-family: "EB Garamond", serif !important;
 }
 
 .tutorial-content h1 {
