@@ -15,7 +15,7 @@ export default function Login() {
 
   return (
     <div className="w-full flex flex-row h-svh">
-      <div className="relative bg-background shadow-md rounded-md border flex flex-1 gap-4 my-5 mx-5">
+      <div className="relative bg-background shadow-md rounded-md border grid grid-cols-2 gap-4 my-5 mx-5">
         {/* <div className="absolute top-8 left-8 flex gap-2">
           <Button size={"icon"} asChild>
             <Link href="/">
@@ -89,7 +89,37 @@ export default function Login() {
             </motion.div>
           </AnimatePresence>
         </div>
-        <Skeleton className="grow m-8 hidden lg:block" />
+        <div className="flex col-span-1 p-8">
+          <div className="relative flex self-stretch min-w-0 flex-col bg-clip-border bg-light rounded-md shadow-md min-h-80 max-h-full overflow-hidden group dark:ring dark:ring-blklight-200">
+            <img
+              src={"https://i.imgur.com/xDEd3HH.jpg"}
+              alt="Image"
+              className="w-full h-full object-cover rounded-md group-hover:scale-105 transition-transform duration-500 "
+            />
+            <div className="absolute top-0 left-0 right-0 bottom-0 p-5 ounded-md flex flex-col">
+              <h1 className="text-3xl font-bold text-white italic">All New</h1>
+              <h1 className="text-6xl font-bold text-white">Blklight</h1>
+              <div className="mt-auto flex items-center justify-between">
+                <Button variant={"ghost"} size={"icon"} type="button" asChild>
+                  <img
+                    src="/blklight-light.svg"
+                    className="!max-w-none size-6"
+                    width="24"
+                    height="24"
+                    alt="Ultimate Mercer Logo"
+                  />
+                </Button>
+                <h4 className="text-md text-right text-white font-bold">
+                  <span className="marker-line bg-dark rounded-md !py-1">
+                    Nocturne Ride by Ultimate Mercer
+                  </span>
+                </h4>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* <Skeleton className="grow m-8 hidden lg:block" /> */}
         {/* <div className="flex flex-1 flex-col justify-center m-8">
           <span className="text-[96px] font-bold">
             <span className="marker-line bg-bluesky-500 px-2">ALL</span>
