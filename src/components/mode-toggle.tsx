@@ -14,54 +14,97 @@ import {
 
 export function ModeToggle() {
   const { theme, setTheme, resolvedTheme } = useTheme();
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const currentTheme = theme === "system" ? resolvedTheme : theme;
 
   const buttonIcon = () => {
-    if (theme === "system") {
-      if (resolvedTheme === "dark")
+    if (!mounted) return <Sun className="h-[1.2rem] w-[1.2rem]" />; // Fallback para evitar erro de hidratação
+
+    switch (currentTheme) {
+      case "dark":
         return (
           <>
             <Moon className="h-[1.2rem] w-[1.2rem] transition-all" />
             <span className="md:block hidden">Modo Escuro</span>
           </>
         );
-      if (resolvedTheme === "book")
+      case "book":
         return (
           <>
-            <BookOpen className="h-[1.2rem] w-[1.2rem] transition-all" /> Modo
-            Livro
+            <BookOpen className="h-[1.2rem] w-[1.2rem] transition-all" />
+            <span className="md:block hidden">Modo Livro</span>
           </>
         );
-      return (
-        <>
-          <Sun className="h-[1.2rem] w-[1.2rem] transition-all" /> Modo Claro
-        </>
-      );
+      case "light":
+        return (
+          <>
+            <Sun className="h-[1.2rem] w-[1.2rem] transition-all" />
+            <span className="md:block hidden">Modo Claro</span>
+          </>
+        );
+      default:
+        return (
+          <>
+            <Laptop className="h-[1.2rem] w-[1.2rem] transition-all" />
+            <span className="md:block hidden">Modo Sistema</span>
+          </>
+        );
     }
-    if (theme === "dark")
-      return (
-        <>
-          <Moon className="h-[1.2rem] w-[1.2rem] transition-all" />{" "}
-          <span className="md:block hidden">Modo Escuro</span>
-        </>
-      );
-    if (theme === "book")
-      return (
-        <>
-          <BookOpen className="h-[1.2rem] w-[1.2rem] transition-all" /> Modo
-          Livro
-        </>
-      );
-    return (
-      <>
-        <Sun className="h-[1.2rem] w-[1.2rem] transition-all" /> Modo Claro
-      </>
-    );
+
+    // if (theme === "system") {
+    //   if (resolvedTheme === "dark")
+    //     return (
+    //       <>
+    //         <Moon className="h-[1.2rem] w-[1.2rem] transition-all" />
+    //         <span className="md:block hidden">Modo Escuro</span>
+    //       </>
+    //     );
+    //   if (resolvedTheme === "book")
+    //     return (
+    //       <>
+    //         <BookOpen className="h-[1.2rem] w-[1.2rem] transition-all" /> Modo
+    //         Livro
+    //       </>
+    //     );
+    //   return (
+    //     <>
+    //       <Sun className="h-[1.2rem] w-[1.2rem] transition-all" /> Modo Claro
+    //     </>
+    //   );
+    // }
+    // if (theme === "dark")
+    //   return (
+    //     <>
+    //       <Moon
+    //         className="h-[1.2rem] w-[1.2rem] transition-all"
+    //         suppressHydrationWarning
+    //       />{" "}
+    //       <span className="md:block hidden">Modo Escuro</span>
+    //     </>
+    //   );
+    // if (theme === "book")
+    //   return (
+    //     <>
+    //       <BookOpen className="h-[1.2rem] w-[1.2rem] transition-all" /> Modo
+    //       Livro
+    //     </>
+    //   );
+    // return (
+    //   <>
+    //     <Sun className="h-[1.2rem] w-[1.2rem] transition-all" /> Modo Claro
+    //   </>
+    // );
   };
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline">
+        <Button variant="outline" suppressHydrationWarning>
           {buttonIcon()}
 
           <span className="sr-only">Toggle theme</span>

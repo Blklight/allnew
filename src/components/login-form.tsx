@@ -85,13 +85,12 @@ export const LoginForm = ({ children }: { children?: React.ReactNode }) => {
         </form>
       </Form>
       <div className="relative">
-        <div className="absolute inset-0 flex items-center">
-          <span className="w-full border-t" />
-        </div>
-        <div className="relative flex justify-center text-xs uppercase">
-          <span className="bg-background px-2 text-muted-foreground">
+        <div className="relative flex gap-1 text-xs items-center uppercase">
+          <div className="w-full h-[1px] bg-grey-medium"></div>
+          <span className="whitespace-nowrap px-2 text-muted-foreground">
             Ou continue com
           </span>
+          <div className="w-full h-[1px] bg-grey-medium"></div>
         </div>
       </div>
       <div className="flex gap-2 justify-center">

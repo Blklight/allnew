@@ -82,26 +82,25 @@ export const LoginFormDrawer = ({
               </FormItem>
             )}
           />
-          <Button className="w-full mt-2" type="submit" variant={"blklight"}>
+          <Button className="w-full mt-2" type="submit">
             Acessar
           </Button>
         </form>
       </Form>
       <div className="relative">
-        <div className="absolute inset-0 flex items-center">
-          <span className="w-full border-t" />
-        </div>
-        <div className="relative flex justify-center text-xs uppercase">
-          <span className="bg-background px-2 text-muted-foreground">
+        <div className="relative flex gap-1 text-xs items-center uppercase">
+          <div className="w-full h-[1px] bg-grey-medium"></div>
+          <span className="whitespace-nowrap px-2 text-muted-foreground">
             Ou continue com
           </span>
+          <div className="w-full h-[1px] bg-grey-medium"></div>
         </div>
       </div>
       <div className="flex gap-2 justify-center">
-        <Button type="button" variant={"blklight"}>
+        <Button type="button" variant={"secondary"}>
           <GoogleLogo className="h-4 w-4" weight="bold" />
         </Button>
-        <Button type="button" variant={"blklight"}>
+        <Button type="button" variant={"secondary"}>
           <GithubLogo className="h-4 w-4" weight="bold" />
         </Button>
       </div>
