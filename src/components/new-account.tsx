@@ -50,7 +50,7 @@ export function NewAccount() {
   }
 
   return (
-    <div className="grid gap-5 md:w-96 w-80 mx-auto">
+    <div className="grid gap-5 lg:w-80 w-96 mx-auto">
       <div className="text-center">
         <h1 className="text-2xl font-semibold tracking-tight text-center mb-2">
           Criar conta

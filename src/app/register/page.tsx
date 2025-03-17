@@ -16,36 +16,11 @@ export default function Login() {
 
   return (
     <div className="w-full flex flex-row h-svh">
-      <div className="relative bg-background shadow-md rounded-md border grid grid-cols-2 gap-4 my-5 mx-5">
-        {/* <div className="absolute top-8 left-8 flex gap-2">
-          <Button size={"icon"} asChild>
-            <Link href="/">
-              <img
-                src="/blklight-light.svg"
-                className="!max-w-none mx-auto size-6"
-                width="24"
-                height="24"
-                alt="Ultimate Mercer Logo"
-              />
-            </Link>
-          </Button>
-          <ModeToggle />
-
-          {isLogin ? (
-            <Button variant={"ghost"} onClick={() => setIsLogin(false)}>
-              Criar conta
-            </Button>
-          ) : (
-            <Button variant={"ghost"} onClick={() => setIsLogin(true)}>
-              Login
-            </Button>
-          )}
-        </div> */}
-
-        <div className="flex flex-col flex-1 m-8 space-y-6 lg:p-8">
+      <div className="flex gap-4 w-full relative bg-background background-texture shadow-md rounded-md border  my-5 mx-5 overflow-hidden">
+        <div className="flex flex-col lg:w-1/3 flex-1 m-8 space-y-6 lg:p-8">
           <div
             className={cn(
-              "grid gap-5 md:w-96 w-80 mx-auto ",
+              "grid gap-5 lg:w-80 w-96 mx-auto ",
               isLogin ? "mb-40" : "mb-16"
             )}
           >
@@ -90,14 +65,14 @@ export default function Login() {
             </motion.div>
           </AnimatePresence>
         </div>
-        <div className="flex col-span-1 p-8">
-          <div className="relative flex self-stretch min-w-0 flex-col bg-clip-border rounded-md shadow-md min-h-80 max-h-full overflow-hidden group ">
+        <div className="lg:w-2/3 lg:flex hidden p-8">
+          <div className="relative w-full flex self-stretch min-w-0 flex-col bg-clip-border rounded-md shadow-md min-h-80 max-h-full overflow-hidden group ">
             <img
               src={"https://i.imgur.com/xDEd3HH.jpg"}
               alt="Image"
               className="w-full h-full object-cover rounded-md group-hover:scale-105 transition-transform duration-500 "
             />
-            <div className="absolute top-0 left-0 right-0 bottom-0 px-5 py-4 ounded-md flex flex-col">
+            <div className="absolute top-0 left-0 right-0 bottom-0 px-5 py-4 rounded-md flex flex-col">
               <h1 className="text-4xl font-bold tracking-tighter md:text-5xl lg:text-7xl text-light">
                 All New{" "}
                 {/* <AuroraText
