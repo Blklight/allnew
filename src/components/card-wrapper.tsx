@@ -5,11 +5,7 @@ import { ReactNode } from "react";
 import { motion } from "framer-motion";
 
 // Define the possible card types
-export type CardType =
-  | "card-background"
-  | "card-article"
-  | "simple-card"
-  | "vertical-background";
+export type CardType = "BackgroundCard" | "ArticleCard" | "SimpleCard";
 
 interface CardWrapperProps {
   children: ReactNode;
@@ -29,19 +25,19 @@ export function CardWrapper({
 
   // This switch statement determines how much space each card type takes in the grid
   switch (type) {
-    case "card-background":
+    case "BackgroundCard":
       // Background cards take up 2 columns and 2 rows (large square)
       gridClasses = "col-span-2 row-span-2";
       break;
-    case "card-article":
+    case "ArticleCard":
       // Article cards take up 2 columns and 1 row (wide rectangle)
-      gridClasses = "col-span-2 row-span-1";
-      break;
-    case "vertical-background":
-      // Vertical background cards take up 1 column and 2 rows (tall rectangle)
       gridClasses = "col-span-1 row-span-2";
       break;
-    case "simple-card":
+    // case "vertical-background":
+    //   // Vertical background cards take up 1 column and 2 rows (tall rectangle)
+    //   gridClasses = "col-span-1 row-span-2";
+    //   break;
+    case "SimpleCard":
     default:
       // Simple cards take up 1 column and 1 row (small square)
       gridClasses = "col-span-1 row-span-1";
@@ -68,8 +64,8 @@ export function CardWrapper({
     // Hover state for interactive feedback
     hover: {
       y: -5,
-      boxShadow:
-        "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)",
+      // boxShadow:
+      //   "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)",
       transition: {
         duration: 0.2,
         ease: "easeOut",

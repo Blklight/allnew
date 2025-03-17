@@ -164,7 +164,7 @@ export function BentoLayout({
       {cards.map((child, index) => (
         <CardWrapper
           key={index}
-          type={layoutPattern[index] || "simple-card"}
+          type={layoutPattern[index] || "SimpleCard"}
           index={index}
         >
           {child}

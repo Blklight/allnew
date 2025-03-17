@@ -19,6 +19,7 @@ import { BackgroundCard } from "@/components/background-card";
 import { SimpleCard } from "@/components/simple-card";
 import { getDocuments } from "@/services";
 import { TutorialFrame } from "@/components/tutorial-frame";
+import DynamicBentoGrid from "@/components/dynamic-bento-grid";
 
 type CardLayoutType = "ArticleCard" | "BackgroundCard" | "SimpleCard";
 
@@ -61,6 +62,9 @@ export default async function Home() {
             />
           );
         })}
+      </div>
+      <div className="">
+        <DynamicBentoGrid data={data} />
       </div>
     </>
   );

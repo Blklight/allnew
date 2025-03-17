@@ -61,10 +61,10 @@ export default function DynamicBentoGrid({
       // Pattern Style 0: Background cards first
       // This puts the large cards at the beginning for a top-heavy layout
       pattern = [
-        ...Array(backgroundCount).fill("card-background" as CardType),
-        ...Array(verticalCount).fill("vertical-background" as CardType),
-        ...Array(articleCount).fill("card-article" as CardType),
-        ...Array(simpleCount).fill("simple-card" as CardType),
+        ...Array(backgroundCount).fill("BackgroundCard" as CardType),
+        // ...Array(verticalCount).fill("vertical-background" as CardType),
+        ...Array(articleCount).fill("ArticleCard" as CardType),
+        ...Array(simpleCount).fill("SimpleCard" as CardType),
       ];
     } else if (patternStyle === 1) {
       // Pattern Style 1: Balanced distribution
@@ -91,26 +91,26 @@ export default function DynamicBentoGrid({
         const chunkPattern = [
           // Start with background cards
           ...(backgroundPerChunk > 0
-            ? Array(backgroundPerChunk).fill("card-background" as CardType)
+            ? Array(backgroundPerChunk).fill("BackgroundCard" as CardType)
             : []),
           // Add some simple cards
           ...(simplePerChunk > 0
             ? Array(Math.ceil(simplePerChunk / 2)).fill(
-                "simple-card" as CardType
+                "SimpleCard" as CardType
               )
             : []),
           // Add article cards
           ...(articlePerChunk > 0
-            ? Array(articlePerChunk).fill("card-article" as CardType)
+            ? Array(articlePerChunk).fill("ArticleCard" as CardType)
             : []),
           // Add vertical background cards
-          ...(verticalPerChunk > 0
-            ? Array(verticalPerChunk).fill("vertical-background" as CardType)
-            : []),
+          // ...(verticalPerChunk > 0
+          //   ? Array(verticalPerChunk).fill("" as CardType)
+          //   : []),
           // Add remaining simple cards
           ...(simplePerChunk > 0
             ? Array(Math.floor(simplePerChunk / 2)).fill(
-                "simple-card" as CardType
+                "SimpleCard" as CardType
               )
             : []),
         ];
@@ -122,10 +122,10 @@ export default function DynamicBentoGrid({
       // Pattern Style 2: Background cards at end
       // This puts the large cards at the end for a bottom-heavy layout
       pattern = [
-        ...Array(simpleCount).fill("simple-card" as CardType),
-        ...Array(articleCount).fill("card-article" as CardType),
-        ...Array(verticalCount).fill("vertical-background" as CardType),
-        ...Array(backgroundCount).fill("card-background" as CardType),
+        ...Array(simpleCount).fill("SimpleCard" as CardType),
+        ...Array(articleCount).fill("ArticleCard" as CardType),
+        // ...Array(verticalCount).fill("vertical-background" as CardType),
+        ...Array(backgroundCount).fill("BackgroundCard" as CardType),
       ];
     }
 
@@ -135,16 +135,21 @@ export default function DynamicBentoGrid({
 
   // This function renders the appropriate component based on the card type
   const renderCard = (item: any, type: CardType) => {
+    console.log(item);
     switch (type) {
-      case "card-background":
-        return <BackgroundCard {...item} />;
-      case "vertical-background":
-        return <BackgroundCard {...item} isVertical={true} />;
-      case "card-article":
-        return <ArticleCard {...item} />;
-      case "simple-card":
+      case "BackgroundCard":
+        return (
+          <BackgroundCard data={item.document} authors={item.authordetails} />
+        );
+      // case "vertical-background":
+      //   return <BackgroundCard {...item} isVertical={true} />;
+      case "ArticleCard":
+        return (
+          <ArticleCard data={item.document} authors={item.authordetails} />
+        );
+      case "SimpleCard":
       default:
-        return <SimpleCard {...item} />;
+        return <SimpleCard data={item.document} authors={item.authordetails} />;
     }
   };
 
@@ -154,7 +159,7 @@ export default function DynamicBentoGrid({
   }
 
   return (
-    <div className="max-w-7xl mx-auto p-4 md:p-6 lg:p-8">
+    <div className="">
       <div
         className={`grid gap-${gap}`}
         style={{
@@ -166,11 +171,11 @@ export default function DynamicBentoGrid({
         {data.map((item, index) => (
           <CardWrapper
             key={index}
-            type={layoutPattern[index] || "simple-card"}
+            type={layoutPattern[index] || "SimpleCard"}
             index={index}
           >
             {/* Render the appropriate card component based on the layout pattern */}
-            {renderCard(item, layoutPattern[index] || "simple-card")}
+            {renderCard(item, layoutPattern[index] || "SimpleCard")}
           </CardWrapper>
         ))}
       </div>
