@@ -59,8 +59,8 @@ export const SearchCommand = () => {
       <CommandDialog open={open} onOpenChange={setOpen}>
         <CommandInput placeholder="Digite para pesquisar" className="" />
         <CommandList>
-          <CommandEmpty>No results found.</CommandEmpty>
-          <CommandGroup heading="Sugestões">
+          <CommandEmpty>Nenhum resultado encontrado.</CommandEmpty>
+          <CommandGroup heading="Categorias">
             <CommandItem>
               <span>Projetos</span>
             </CommandItem>

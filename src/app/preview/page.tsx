@@ -33,6 +33,7 @@ import BasicLayout from "@/components/layouts/basic-layout";
 import { MDXComponents } from "@/components/mdx";
 import { ShowArticlePreview } from "@/components/show-article-preview";
 import { PathsSelection } from "@/components/paths-selection";
+import { PreviewInfo } from "@/components/preview-info";
 
 export default function Preview() {
   // const [isSelectPathsOpen, setIsSelectPathsOpen] = React.useState(false);
@@ -98,10 +99,9 @@ export default function Preview() {
           <h1 className="text-3xl font-bold mb-4">Preview</h1>
 
           <div className="flex flex-col space-y-10 sticky top-0 py-5">
+            <PreviewInfo />
             <div className="border p-4 rounded-md shadow-md relative">
-              <h5 className="text-[20px] font-bold mb-2">
-                Categorias do tutorial
-              </h5>
+              <h5 className="text-[20px] font-bold mb-2">Categorias</h5>
               <div className="flex flex-wrap gap-2 mb-4">
                 {Array.from(["Javascript", "React", "Tutorial"]).map(
                   (item, index) => (
