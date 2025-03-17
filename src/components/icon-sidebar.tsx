@@ -18,7 +18,7 @@ export const IconSidebar = () => {
           />
         </Link>
       </Button>
-      <Button variant={"secondary"} size={"icon"}>
+      {/* <Button variant={"secondary"} size={"icon"}>
         <GalleryVerticalEnd className="w-4 h-4" />
       </Button>
       <Button variant={"secondary"} size={"icon"}>
@@ -32,7 +32,7 @@ export const IconSidebar = () => {
       </Button>
       <Button variant={"secondary"} size={"icon"} className="mt-auto">
         <EllipsisVertical className="w-4 h-4" />
-      </Button>
+      </Button> */}
     </div>
   );
 };
