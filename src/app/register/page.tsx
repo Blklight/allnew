@@ -9,9 +9,10 @@ import { AnimatePresence, motion } from "motion/react";
 import { NewAccount } from "@/components/new-account";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { AuroraText } from "@/components/magicui/aurora-text";
 
 export default function Login() {
-  const [isLogin, setIsLogin] = React.useState(true);
+  const [isLogin, setIsLogin] = React.useState(false);
 
   return (
     <div className="w-full flex flex-row h-svh">
@@ -90,15 +91,42 @@ export default function Login() {
           </AnimatePresence>
         </div>
         <div className="flex col-span-1 p-8">
-          <div className="relative flex self-stretch min-w-0 flex-col bg-clip-border bg-light rounded-md shadow-md min-h-80 max-h-full overflow-hidden group dark:ring dark:ring-blklight-200">
+          <div className="relative flex self-stretch min-w-0 flex-col bg-clip-border rounded-md shadow-md min-h-80 max-h-full overflow-hidden group ">
             <img
               src={"https://i.imgur.com/xDEd3HH.jpg"}
               alt="Image"
               className="w-full h-full object-cover rounded-md group-hover:scale-105 transition-transform duration-500 "
             />
-            <div className="absolute top-0 left-0 right-0 bottom-0 p-5 ounded-md flex flex-col">
-              <h1 className="text-3xl font-bold text-white italic">All New</h1>
-              <h1 className="text-6xl font-bold text-white">Blklight</h1>
+            <div className="absolute top-0 left-0 right-0 bottom-0 px-5 py-4 ounded-md flex flex-col">
+              <h1 className="text-4xl font-bold tracking-tighter md:text-5xl lg:text-7xl text-light">
+                All New{" "}
+                {/* <AuroraText
+                  colors={[
+                    "#6A4DFF",
+                    "#28acff",
+                    "#f7f7f7",
+                    "#121212",
+                    "#FBF0D9",
+                  ]}
+                >
+                  All New
+                </AuroraText> */}
+              </h1>
+              <h1 className="text-4xl font-bold tracking-tighter md:text-5xl lg:text-7xl">
+                <AuroraText
+                  colors={[
+                    "#6A4DFF",
+                    "#28acff",
+                    "#f7f7f7",
+                    "#121212",
+                    "#FBF0D9",
+                  ]}
+                >
+                  Blklight
+                </AuroraText>
+              </h1>
+              {/* <h1 className="text-3xl font-bold text-white italic">All New</h1>
+              <h1 className="text-6xl font-bold text-white">Blklight</h1> */}
               <div className="mt-auto flex items-center justify-between">
                 <Button variant={"ghost"} size={"icon"} type="button" asChild>
                   <img
@@ -109,9 +137,9 @@ export default function Login() {
                     alt="Ultimate Mercer Logo"
                   />
                 </Button>
-                <h4 className="text-md text-right text-white font-bold">
-                  <span className="marker-line bg-dark rounded-md !py-1">
-                    Nocturne Ride by Ultimate Mercer
+                <h4 className="text-sm text-right text-light">
+                  <span className="bg-dark/70 px-2 rounded-md !py-1">
+                    Projeto do dia: Nocturne Ride, por Ultimate Mercer
                   </span>
                 </h4>
               </div>

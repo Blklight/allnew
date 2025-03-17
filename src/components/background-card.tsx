@@ -68,11 +68,11 @@ export const BackgroundCard = ({
 
   // const cardStyles = styles[data.documentType];
   return (
-    <div className="relative flex self-start min-w-0 flex-col bg-clip-border bg-light rounded-md shadow-md min-h-80 overflow-hidden group">
+    <div className="relative flex self-start min-w-0 flex-col bg-clip-border  rounded-md shadow-md min-h-80 overflow-hidden group">
       <img
         src={data.cover || "https://i.imgur.com/yb5WVlW.jpg"}
         alt={data.title}
-        className="w-full min-h-[525px] max-h-[650px] object-cover rounded-md group-hover:scale-110 transition-transform duration-500"
+        className="w-full min-h-[525px] max-h-[650px] object-cover rounded-md group-hover:scale-110 transition-transform duration-500 "
         style={{ filter: `url(${cardStyles.filter})` }}
       />
 

@@ -65,7 +65,7 @@ export const ArticleCard = ({
   return (
     <div
       className={cn(
-        "relative self-start rounded-md border border-dark shadow-md p-4",
+        "relative self-start rounded-md border border-dark shadow-md p-4 background-texture",
         cardStyles.background
       )}
     >
@@ -130,9 +130,6 @@ export const ArticleCard = ({
             src={data.cover || "https://i.imgur.com/YU2M76w.jpg"}
             alt={data.title}
             className="w-full min-h-[200px] max-h-[300px] object-cover rounded-md shadow-md"
-            style={{
-              filter: `url(${cardStyles.filter})`,
-            }}
           />
         </div>
         <div className="flex flex-wrap gap-2 mb-3">

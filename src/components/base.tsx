@@ -7,7 +7,7 @@ import { SidebarProvider } from "./ui/sidebar";
 export const Base = ({ children }: { children: React.ReactNode }) => {
   const pathname = usePathname();
 
-  const withoutLayout = ["/auth", "/auth/login", "/login"];
+  const withoutLayout = ["/auth", "/auth/login", "/login", "/register"];
 
   if (withoutLayout.includes(pathname)) {
     return <>{children}</>;

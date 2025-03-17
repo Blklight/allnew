@@ -263,7 +263,10 @@ export const Styling = () => {
           <Palette className="mr-2 size-4" /> Estilização
         </Button>
       </SheetTrigger>
-      <SheetContent className="w-[500px] sm:w-[calc(100vw-32px)] sm:max-w-[calc(100vw-32px)] max-w-[calc(100vw-32px)] max-h-[calc(100vh-32px)] xl:max-w-[calc(100vw-32px)] p-8 m-2.5 overflow-y-auto border rounded-md">
+      <SheetContent
+        title="Estilização"
+        className="w-[500px] sm:w-[calc(100vw-32px)] sm:max-w-[calc(100vw-32px)] max-w-[calc(100vw-32px)] max-h-[calc(100vh-32px)] xl:max-w-[calc(100vw-32px)] p-8 m-2.5 overflow-y-auto border rounded-md"
+      >
         <CardSelector />
       </SheetContent>
     </Sheet>

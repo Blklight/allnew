@@ -16,6 +16,7 @@ import { GithubLogo, GoogleLogo } from "@phosphor-icons/react";
 import { Button } from "./ui/button";
 import { useStore } from "@/store/use-store";
 import { user } from "./dev-tools";
+import Link from "next/link";
 
 export const loginSchema = z.object({
   login: z.string().min(2).max(50),
@@ -102,6 +103,12 @@ export const LoginFormDrawer = ({
         </Button>
         <Button type="button" variant={"blklight"}>
           <GithubLogo className="h-4 w-4" weight="bold" />
+        </Button>
+      </div>
+      <div className="mx-auto">
+        {" "}
+        <Button variant={"link"} asChild>
+          <Link href={"/register"}>Não possui uma conta? Criar conta</Link>
         </Button>
       </div>
     </div>

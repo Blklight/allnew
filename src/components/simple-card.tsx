@@ -61,7 +61,7 @@ export const SimpleCard = ({
   return (
     <div
       className={cn(
-        "flex flex-col rounded-br-md rounded-r-md border  border-l-8  p-4 self-start",
+        "flex flex-col rounded-br-md rounded-r-md border  border-l-8  p-4 self-start background-texture",
         cardStyles.borderColor,
         cardStyles.bg
       )}

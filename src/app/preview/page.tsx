@@ -98,7 +98,7 @@ export default function Preview() {
         <div className="relative p-4">
           <h1 className="text-3xl font-bold mb-4">Preview</h1>
 
-          <div className="flex flex-col space-y-10 sticky top-0 py-5">
+          <div className="flex flex-col space-y-10 py-5">
             <PreviewInfo />
             <div className="border p-4 rounded-md shadow-md relative">
               <h5 className="text-[20px] font-bold mb-2">Categorias</h5>
@@ -186,7 +186,7 @@ export default function Preview() {
           </div>
         </div>
         <div className="p-4">
-          <ShowArticlePreview />
+          <ShowArticlePreview layout={"basic-layout"} />
           {/* <Frame text="Preview" className="mb-6">
             {article?.doc?.body?.code && (
               <MDXComponents
