@@ -2,7 +2,7 @@
 "use client";
 
 import { ReactNode } from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 // Define the possible card types and sizes
 export type CardType = "BackgroundCard" | "ArticleCard" | "SimpleCard";

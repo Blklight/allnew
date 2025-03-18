@@ -60,7 +60,6 @@ export const ArticleCard = ({
   const [typography, setTypography] = React.useState<any>(
     data.stylesheet?.typography
   );
-  // console.log(data);
   const typeManager = (type: string) => {
     if (type === "tutorial") return "Tutorial";
     if (type === "article") return "Artigo";

@@ -15,19 +15,19 @@ export async function generateStaticParams() {
   const test = docs.map((doc) => ({
     slug: doc.slug.replace("documents/", ""),
   }));
-  console.log("line 17", test);
   return docs.map((doc) => ({
     slug: doc.slug.replace("documents/", ""),
   }));
 }
 
-export default async function Page({ params }: { params: { slug: string } }) {
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const data = await getDocument(await params);
 
   if (!data?.doc) return notFound();
-  console.log("DEBUG - Dados do documento:", data.doc.title);
-  const Content = getMDXComponent(data.doc.body?.code);
-  // console.log("DEBUG - Código do documento:", data.doc.body?.code);
 
   return (
     <>
