@@ -4,12 +4,14 @@
 import { ReactNode } from "react";
 import { motion } from "framer-motion";
 
-// Define the possible card types
+// Define the possible card types and sizes
 export type CardType = "BackgroundCard" | "ArticleCard" | "SimpleCard";
+export type CardSize = "1x1" | "2x1" | "1x2" | "2x2";
 
 interface CardWrapperProps {
   children: ReactNode;
   type: CardType;
+  size: CardSize;
   index: number;
   className?: string;
 }
@@ -17,51 +19,45 @@ interface CardWrapperProps {
 export function CardWrapper({
   children,
   type,
+  size,
   index,
   className = "",
 }: CardWrapperProps) {
-  // Define grid classes based on card type
+  // Define grid classes based on size
   let gridClasses = "";
 
-  // This switch statement determines how much space each card type takes in the grid
-  switch (type) {
-    case "BackgroundCard":
-      // Background cards take up 2 columns and 2 rows (large square)
-      gridClasses = "col-span-2 row-span-2";
+  // This switch statement determines how much space each card takes in the grid
+  switch (size) {
+    case "2x2":
+      gridClasses = "col-span-2 row-span-2"; // 2 columns and 2 rows
       break;
-    case "ArticleCard":
-      // Article cards take up 2 columns and 1 row (wide rectangle)
-      gridClasses = "col-span-1 row-span-2";
+    case "2x1":
+      gridClasses = "col-span-2 row-span-1"; // 2 columns and 1 row
       break;
-    // case "vertical-background":
-    //   // Vertical background cards take up 1 column and 2 rows (tall rectangle)
-    //   gridClasses = "col-span-1 row-span-2";
-    //   break;
-    case "SimpleCard":
+    case "1x2":
+      gridClasses = "col-span-1 row-span-2"; // 1 column and 2 rows
+      break;
+    case "1x1":
     default:
-      // Simple cards take up 1 column and 1 row (small square)
-      gridClasses = "col-span-1 row-span-1";
+      gridClasses = "col-span-1 row-span-1"; // 1 column and 1 row
       break;
   }
 
   // Animation variants for the cards
   const cardVariants = {
-    // Initial state (hidden)
     hidden: {
       opacity: 0,
       y: 20,
     },
-    // Visible state with staggered delay based on index
     visible: (i: number) => ({
       opacity: 1,
       y: 0,
       transition: {
-        delay: i * 0.1, // Stagger the animations by 0.1s per card
+        delay: i * 0.1,
         duration: 0.5,
-        ease: [0.4, 0, 0.2, 1], // Smooth easing function
+        ease: [0.4, 0, 0.2, 1],
       },
     }),
-    // Hover state for interactive feedback
     hover: {
       y: -5,
       // boxShadow:
@@ -78,10 +74,10 @@ export function CardWrapper({
       className={`${gridClasses} ${className}`}
       variants={cardVariants}
       initial="hidden"
-      whileInView="visible" // Animate when the card comes into view
+      whileInView="visible"
       whileHover="hover"
-      viewport={{ once: true, margin: "-50px" }} // Only animate once when it enters the viewport
-      custom={index} // Pass the index to the animation for staggered timing
+      viewport={{ once: true, margin: "-50px" }}
+      custom={index}
     >
       {children}
     </motion.div>

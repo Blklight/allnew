@@ -1,6 +1,6 @@
 "use client";
 import * as React from "react";
-import { Newspaper, RocketLaunch, Sparkle } from "@phosphor-icons/react";
+import { Books, Newspaper, RocketLaunch, Sparkle } from "@phosphor-icons/react";
 import { SearchCommand } from "./search-command";
 import { SplitDropdownButton } from "./ui/split-dropdown-button";
 import { ModeToggle } from "./mode-toggle";
@@ -13,6 +13,7 @@ import { Sheet, SheetContent } from "./ui/sheet";
 import { LoginFormDrawer } from "./login-form-drawer";
 import { Skeleton } from "./ui/skeleton";
 import { LoginButton } from "./login-button";
+import { NewSearchCommand } from "./new-search-command";
 
 export const NavToolbar = () => {
   const { routeLogin, isLogged, user } = useStore((state: any) => state);
@@ -21,7 +22,7 @@ export const NavToolbar = () => {
 
   const routeTools = [
     { label: "Criar artigo", value: "criar-artigo", icon: <Newspaper /> },
-    { label: "Criar tutorial", value: "criar-tutorial", icon: <BookOpen /> },
+    { label: "Criar tutorial", value: "criar-tutorial", icon: <Books /> },
     { label: "Criar projeto", value: "criar-projeto", icon: <RocketLaunch /> },
   ];
 
@@ -40,8 +41,8 @@ export const NavToolbar = () => {
   }, [isLogged]);
   return (
     <>
-      <div className="flex justify-between items-center p-4">
-        <SearchCommand />
+      <div className="flex justify-between items-center p-4 sticky top-0 z-20 rounded-t-md backdrop-blur supports-[backgrop-filter]:bg-background/60">
+        <NewSearchCommand />
         <div className="flex gap-2 items-center">
           {isLogged && (
             <SplitDropdownButton

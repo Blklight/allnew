@@ -43,7 +43,7 @@ export const SearchCommand = () => {
       <Button
         variant={"outline"}
         className={cn(
-          "relative min-h-8 justify-start items-center rounded-md bg-background text-sm font-normal text-muted-foreground shadow-none sm:pr-12 lg:w-64 md:w-36 w-24 lg:max-w-[300px] cursor-pointer"
+          "relative min-h-8 justify-start items-center rounded-md bg-background text-sm font-normal text-muted-foreground shadow-none sm:pr-12  cursor-pointer"
         )}
         onClick={() => setOpen(true)}
       >

@@ -15,7 +15,7 @@ const styles = {
     title: "text-dark",
     color: "text-orange-500",
     bg: "",
-    underline: "bg-orange-500",
+    underline: "text-orange-500",
     background: "bg-orange-500 text-dark",
     difficultyBg: "bg-orange",
     difficultyColor: "text-dark",
@@ -26,7 +26,7 @@ const styles = {
     title: "text-light",
     color: "text-cyber-yellow-500",
     bg: "",
-    underline: "bg-cyber-yellow-500",
+    underline: "text-cyber-yellow-500",
     background: "bg-cyber-yellow-500 text-dark",
     // difficultyBg: "bg-orange",
     // difficultyColor: "text-dark",
@@ -37,7 +37,7 @@ const styles = {
     title: "text-light",
     color: "text-magenta-400",
     bg: "",
-    underline: "bg-magenta-400",
+    underline: "text-magenta-400",
     background: "bg-magenta-500 text-dark",
     // difficultyBg: "bg-orange",
     // difficultyColor: "text-dark",
@@ -62,11 +62,6 @@ export const BackgroundCard = ({
     if (type === "project") return "Projeto";
   };
 
-  // React.useEffect(() => {
-  //   setCardStyles(styles[data.documentType]);
-  // }, []);
-
-  // const cardStyles = styles[data.documentType];
   return (
     <div className="relative flex self-start min-w-0 flex-col bg-clip-border  rounded-md shadow-md min-h-80 overflow-hidden group">
       <img
