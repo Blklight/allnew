@@ -41,7 +41,7 @@ export const NavToolbar = () => {
   }, [isLogged]);
   return (
     <>
-      <div className="flex justify-between items-center p-4 sticky top-0 z-20 rounded-t-md backdrop-blur supports-[backgrop-filter]:bg-background/60">
+      <div className="flex justify-between items-center p-4 z-20 rounded-t-md ">
         <NewSearchCommand />
         <div className="flex gap-2 items-center">
           {isLogged && (

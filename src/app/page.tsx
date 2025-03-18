@@ -64,27 +64,29 @@ export default async function Home() {
           />
           <div className="absolute top-0 left-0 right-0 bottom-0 px-5 py-4 rounded-md flex flex-col">
             <div className="mt-auto flex items-center justify-between">
-              <Button variant={"ghost"} size={"icon"} type="button" asChild>
+              <div className="flex gap-1 items-center ml-auto">
+                <h4 className="text-sm text-right text-light ">
+                  <span className="bg-dark/70 px-2 rounded !py-1">
+                    Projeto do dia: Nocturne Ride, por Ultimate Mercer
+                  </span>
+                </h4>
                 <img
                   src="/blklight-light.svg"
-                  className="!max-w-none size-6"
-                  width="24"
-                  height="24"
+                  className=" !max-w-none size-10"
+                  width="40"
+                  height="40"
                   alt="Ultimate Mercer Logo"
                 />
-              </Button>
-              <h4 className="text-sm text-right text-light">
-                <span className="bg-dark/70 px-2 rounded-md !py-1">
-                  Projeto do dia: Nocturne Ride, por Ultimate Mercer
-                </span>
-              </h4>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
       <div>
-        <h3 className="text-3xl font-bold mb-4">Mais recentes</h3>
+        <h3 className="text-[32px] tracking-tighter font-bold mb-4">
+          Mais recentes
+        </h3>
       </div>
 
       <div className="">

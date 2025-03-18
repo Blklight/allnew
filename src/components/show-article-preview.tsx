@@ -11,8 +11,6 @@ export const ShowArticlePreview = async ({
     slug: "front-end-tutorial",
   });
 
-  console.log("article", article);
-
   if (!article?.doc) return null;
 
   return (

@@ -112,7 +112,7 @@ export default function Login() {
                 /> */}
                 <div className="flex gap-1 items-center ml-auto">
                   <h4 className="text-sm text-right text-light ">
-                    <span className="bg-dark/70 px-2 rounded-md !py-1">
+                    <span className="bg-dark/70 px-2 rounded !py-1">
                       Projeto do dia: Nocturne Ride, por Ultimate Mercer
                     </span>
                   </h4>

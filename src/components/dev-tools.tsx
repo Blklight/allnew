@@ -421,3 +421,76 @@ export const defaultEditorJsonValue = {
     },
   ],
 };
+
+export const articleData = {
+  doc: {
+    title: "Introdução ao Desenvolvimento Front-End",
+    description:
+      "Aprenda os conceitos fundamentais do desenvolvimento front-end e crie sua primeira página web moderna.",
+    documentType: "tutorial",
+    date: "2025-03-15T17:42:00.000Z",
+    tags: ["front-end", "html", "css", "javascript", "react"],
+    draft: true,
+    cover: "https://i.imgur.com/Qw6LuRE.jpg",
+    stylesheet: {
+      pageLayout: "",
+      cardLayout: "article-card",
+      typography: "jetbrains-font",
+      filter: "",
+      type: "Stylesheet",
+      _raw: {},
+    },
+    tutorial: {
+      step: null,
+      difficulty: "iniciante",
+      type: "Tutorial",
+      _raw: {},
+    },
+    authors: [
+      {
+        name: "Ultimate Mercer",
+        quote: null,
+        type: "AuthorsArticle",
+        _raw: {},
+      },
+    ],
+    _id: "documents/front-end-tutorial.mdx",
+    _raw: {
+      sourceFilePath: "documents/front-end-tutorial.mdx",
+      sourceFileName: "front-end-tutorial.mdx",
+      sourceFileDir: "documents",
+      contentType: "mdx",
+      flattenedPath: "documents/front-end-tutorial",
+    },
+    type: "Doc",
+    slug: "documents/front-end-tutorial",
+  },
+  authordetails: [
+    [
+      {
+        name: "Ultimate Mercer",
+        avatar: "https://i.imgur.com/rkCtudG.jpg",
+        occupation: "Developer",
+        email: null,
+        github: "https://github.com",
+        medium: null,
+        twitter: "https://twitter.com/Twitter",
+        linkedin: "https://www.linkedin.com",
+        instagram: null,
+        body: {
+          raw: "",
+          html: "",
+        },
+        _id: "authors/ultimatemercer.md",
+        _raw: {
+          sourceFilePath: "authors/ultimatemercer.md",
+          sourceFileName: "ultimatemercer.md",
+          sourceFileDir: "authors",
+          contentType: "markdown",
+          flattenedPath: "authors/ultimatemercer",
+        },
+        type: "Author",
+      },
+    ],
+  ],
+};

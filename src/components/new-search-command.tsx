@@ -120,17 +120,6 @@ export function NewSearchCommand() {
       category: "biblioteca",
       id: "biblioteca-projects",
     },
-    // {
-    //   icon: <Book className="h-5 w-5" />,
-    //   title: "Livros",
-    //   subtitle: "Sua coleção de livros",
-    //   iconBg:
-    //     "bg-blklight-500 text-light",
-    //   onClick: () => router.push("/biblioteca/livros"),
-    //   keywords: ["books", "livros", "reading", "collection"],
-    //   category: "biblioteca",
-    //   id: "biblioteca-books",
-    // },
     {
       icon: <Route className="h-5 w-5" />,
       title: "Minhas trilhas de aprendizado",
@@ -372,7 +361,7 @@ export function NewSearchCommand() {
         <Search className="h-5 w-5" />
         <span className="hidden lg:inline-flex">Pesquisar...</span>
         <span className="inline-flex lg:hidden">Pesquisar...</span>
-        <kbd className="pointer-events-none absolute right-1.5 top-1.5 hidden h-5 select-none items-center gap-1 rounded bg-bluesky-500 text-light px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex">
+        <kbd className="pointer-events-none absolute right-1.5 top-[0.45rem] hidden h-5 select-none items-center gap-1 rounded bg-bluesky-500 text-light px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex">
           <span className="text-xs">⌘</span>K
         </kbd>
       </Button>

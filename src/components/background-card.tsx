@@ -9,6 +9,12 @@ import { Badge } from "./ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import type { DocumentCard } from "@/utils/interfaces";
 import { cn } from "@/lib/utils";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "./ui/tooltip";
 
 const styles = {
   tutorial: {
@@ -74,20 +80,20 @@ export const BackgroundCard = ({
       <div className="absolute top-0 left-0 right-0 bottom-0 p-4 rounded-md flex flex-col bg-gradient-to-b from-transparent from-40% to-black/90">
         <div className="flex justify-between mb-2.5">
           <div className="flex gap-2">
-            <div
+            <Badge
               className={cn(
-                "flex items-center px-2 py-0.5 h-9 bg-orange-500 text-dark rounded-md shadow-md capitalize",
-                cardStyles.tags
+                "text-base rounded-md pr-0 py-0",
+                cardStyles.background
               )}
             >
               {typeManager(data.documentType)}
-            </div>
-            {data.tutorial?.difficulty && (
-              <div className="flex items-center px-2 py-0.5 h-9 bg-orange-300 text-dark rounded-md">
-                <BarChart className="h-4 w-4 mr-1" />
-                {data.tutorial?.difficulty}
-              </div>
-            )}
+              {data.tutorial?.difficulty && (
+                <Badge className="bg-orange-200 text-dark text-base rounded-md py-1 capitalize ml-1">
+                  <BarChart className="h-5 w-5" />
+                  {data.tutorial?.difficulty}
+                </Badge>
+              )}
+            </Badge>
           </div>
 
           <Button
@@ -101,19 +107,6 @@ export const BackgroundCard = ({
           </Button>
         </div>
 
-        {/* <Link href={`${data.slug}`} className="hover:underline">
-          <h4
-            className={cn(
-              "text-[24px] font-barlow font-bold",
-              data.stylesheets?.typography
-            )}
-          >
-            {data.title}
-          </h4>
-        </Link>
-        <p className={cn("", data.stylesheets?.typography)}>
-          {data.description}
-        </p> */}
         <div className="mt-auto">
           <Link
             href={`${data.slug}`}
@@ -147,7 +140,7 @@ export const BackgroundCard = ({
               <Badge
                 key={index}
                 variant="secondary"
-                className={cn("!rounded-md capitalize", cardStyles.tags)}
+                className={cn("!rounded capitalize", cardStyles.tags)}
               >
                 {cat.trim()}
               </Badge>
@@ -156,22 +149,53 @@ export const BackgroundCard = ({
           </div>
           <div className="flex items-center gap-3 mb-3">
             <div className="*:data-[slot=avatar]:ring-background flex -space-x-2 hover:space-x-1 *:data-[slot=avatar]:size-10 *:data-[slot=avatar]:ring-2 *:data-[slot=avatar]:transition-all *:data-[slot=avatar]:duration-300 *:data-[slot=avatar]:ease-in-out">
-              {authors?.map((author: any, index: any) => (
-                <Avatar key={index}>
-                  <AvatarImage src={author.avatar} alt={author.name} />
-                  <AvatarFallback className="uppercase">
-                    {author.name
-                      .split(" ")
-                      .map((word: any) => word[0])
-                      .join("")}
-                  </AvatarFallback>
-                </Avatar>
-              ))}
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger className="!size-10" asChild>
+                    <Avatar>
+                      <AvatarImage
+                        src={"/images/ultimate-mercer-base.jpg"}
+                        className="object-cover"
+                        alt={"Ultimate Mercer"}
+                      />
+                      <AvatarFallback className="uppercase">UM</AvatarFallback>
+                    </Avatar>
+                  </TooltipTrigger>
+                  <TooltipContent side="right">
+                    <p>Ultimate Mercer</p>
+                  </TooltipContent>
+                </Tooltip>
+                {/* {authors?.map((author: any, index: any) => (
+                  <Tooltip key={index}>
+                    <TooltipTrigger className="!size-10" asChild>
+                      <Avatar>
+                        <AvatarImage
+                          src={"/images/ultimate-mercer-base.jpg"}
+                          className="object-cover"
+                          alt={author.name}
+                        />
+                        <AvatarFallback className="uppercase">
+                          {author.name
+                            .split(" ")
+                            .map((word: any) => word[0])
+                            .join("")}
+                        </AvatarFallback>
+                      </Avatar>
+                    </TooltipTrigger>
+                    <TooltipContent side="right">
+                      <p>{author.name}</p>
+                    </TooltipContent>
+                  </Tooltip>
+                ))} */}
+              </TooltipProvider>
             </div>
             <div>
-              <div className="flex items-center text-xs">
+              <div className="flex items-center font-semibold text-xs">
                 <span
-                  className={cn("marker-line bg-dark !py-1", cardStyles.color)}
+                  className={cn(
+                    "marker-line rounded bg-dark !py-1",
+                    cardStyles.color
+                  )}
                 >
                   13 Mar 2025
                 </span>
