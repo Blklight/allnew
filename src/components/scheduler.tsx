@@ -18,6 +18,7 @@ import { Button } from "@/components/ui/button";
 import {
   CalendarClock,
   CalendarIcon,
+  Check,
   Clock,
   Loader2,
   Plus,
@@ -27,12 +28,25 @@ import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 import { cn } from "@/lib/utils";
 import { Calendar } from "./ui/calendar";
 import { Input } from "./ui/input";
+import { useRouter } from "next/navigation";
+import { toast } from "sonner";
 
 export const Scheduler = () => {
   const [date, setDate] = React.useState<Date>();
   const [time, setTime] = React.useState("12:00");
   const [isSubmitting, setIsSubmitting] = React.useState(false);
   const [open, setOpen] = React.useState(false);
+  const router = useRouter();
+
+  const publish = () => {
+    toast(
+      <div className="font-inter text-base flex items-center gap-1">
+        {" "}
+        <Check className="size-6" /> Agendado com sucesso!
+      </div>
+    );
+    router.push("/");
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -135,8 +149,12 @@ export const Scheduler = () => {
               </div>
             </div>
           </div>
-          <DrawerFooter>
-            <Button type="submit" disabled={isSubmitting}>
+          <DrawerFooter className="pb-10">
+            <Button
+              type="button"
+              onClick={() => publish()}
+              disabled={isSubmitting}
+            >
               {isSubmitting ? (
                 <>
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" />
@@ -147,7 +165,7 @@ export const Scheduler = () => {
               )}
             </Button>
             <DrawerClose asChild>
-              <Button variant="outline">Cancelar</Button>
+              <Button variant="ghost">Cancelar</Button>
             </DrawerClose>
           </DrawerFooter>
         </form>

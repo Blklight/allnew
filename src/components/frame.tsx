@@ -65,7 +65,7 @@ export const Frame = ({
           </Button>
         </div>
       </div>
-      <div className="w-full px-2 p-5 h-full overflow-y-auto scroll-smooth">
+      <div className="w-full px-2 p-5 h-full overflow-y-auto scroll-smooth background-texture">
         {children}
       </div>
     </div>

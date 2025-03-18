@@ -598,7 +598,7 @@ function CommandItem({
   return (
     <button
       className={cn(
-        "flex items-center gap-2 rounded-lg p-3 text-left text-sm transition-colors w-full",
+        "flex items-center gap-2 rounded-md p-3 text-left text-sm transition-colors w-full",
         isSelected
           ? "bg-accent text-accent-foreground"
           : "hover:bg-accent hover:text-accent-foreground"

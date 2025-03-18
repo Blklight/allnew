@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { CalendarClock, Code, Globe, Plus, Router } from "lucide-react";
+import { CalendarClock, Code, Globe, Plus, Router, Upload } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 // import TextEditor from "@/components/text-editor";
@@ -26,19 +26,36 @@ export default function Create() {
   return (
     <div className="container mx-auto">
       <div className="max-w-3xl mx-auto">
-        <h1 className="text-3xl font-bold mb-4">Criar tutorial</h1>
-        <div className="flex flex-col gap-4">
-          <div className="grid w-full items-center gap-1.5">
-            <Label htmlFor="titulo">Titulo</Label>
-            <Input type="titulo" id="titulo" placeholder="Titulo" />
-          </div>
-          <div className="grid w-full  items-center gap-1.5">
-            <Label htmlFor="descricao">Descrição</Label>
-            <Textarea id="descricao" placeholder="Descrição" />
-          </div>
-          <div className="grid w-full  items-center gap-1.5">
-            <p>Imagem</p>
-            <Skeleton className="w-full h-24 !bg-dark-100 dark:!bg-muted" />
+        <div className="rounded-md border shadow-md p-4">
+          <h1 className="text-3xl font-bold mb-4">Criar tutorial</h1>
+          <div className="flex flex-col gap-4">
+            <div className="grid w-full items-center gap-1.5">
+              <Label htmlFor="titulo">Titulo</Label>
+              <Input type="titulo" id="titulo" placeholder="Titulo" />
+            </div>
+            <div className="grid w-full  items-center gap-1.5">
+              <Label htmlFor="descricao">Descrição</Label>
+              <Textarea id="descricao" placeholder="Descrição" />
+            </div>
+            <div className="grid w-full  items-center gap-1.5">
+              <Label>Upload de imagem</Label>
+              <div className="relative flex self-stretch min-w-0 flex-col bg-clip-border rounded-md shadow-lg min-h-80 max-h-full overflow-hidden group">
+                {" "}
+                <img
+                  src={"https://i.imgur.com/xDEd3HH.jpg"}
+                  alt="Image"
+                  className="w-full h-80 object-cover rounded-md "
+                  style={{ filter: "url(#blklightBlueskyWhiteBlack)" }}
+                />
+                <div className="absolute top-0 left-0 right-0 bottom-0 px-5 py-4 rounded-md flex flex-col justify-center items-center">
+                  <div className="flex items-center justify-between">
+                    <div className="rounded-md bg-dark/80 text-light p-4 group-hover:scale-115 transition-transform duration-500">
+                      <Upload className="h-10 w-10 " />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

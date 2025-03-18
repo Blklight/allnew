@@ -14,7 +14,7 @@ export const ShowArticlePreview = async ({
   if (!article?.doc) return null;
 
   return (
-    <Frame text="Preview" className="mb-6">
+    <Frame text="Preview">
       <MDXComponents
         layout={layout}
         doc={article?.doc}
