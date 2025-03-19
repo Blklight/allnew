@@ -30,7 +30,7 @@ export const Author = () => {
         />
         <div className="flex flex-col flex-1 justify-center">
           <h4 className="text-3xl font-bold tracking-wide mb-2">
-            Julian Silva da Cunha
+            Ultimate Mercer
           </h4>
           <div className="flex gap-2 md:justify-start justify-center">
             <p>Estudante/Desenvolvedor Web/Designer</p>
