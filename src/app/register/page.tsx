@@ -68,7 +68,7 @@ export default function Login() {
         <div className="lg:w-2/3 lg:flex hidden p-8">
           <div className="relative w-full flex self-stretch min-w-0 flex-col bg-clip-border rounded-md shadow-md min-h-80 max-h-full overflow-hidden group ">
             <img
-              src={"https://i.imgur.com/xDEd3HH.jpg"}
+              src={"https://i.imgur.com/BCY3uY6.jpg"}
               alt="Image"
               className="w-full h-full object-cover rounded-md group-hover:scale-105 transition-transform duration-500 "
             />

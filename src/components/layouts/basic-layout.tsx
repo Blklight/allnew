@@ -59,7 +59,11 @@ const BasicLayout = ({ doc, children }: any) => {
         {Array.isArray(tags) && tags.length > 0 && (
           <div className="mb-2 flex flex-wrap gap-1.5">
             {tags.map((tag) => (
-              <Badge key={tag} variant="default" className="text-xs">
+              <Badge
+                key={tag}
+                variant="default"
+                className="capitalize text-xs rounded"
+              >
                 {tag}
               </Badge>
             ))}

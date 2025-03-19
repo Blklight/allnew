@@ -42,10 +42,9 @@ export default function Create() {
               <div className="relative flex self-stretch min-w-0 flex-col bg-clip-border rounded-md shadow-lg min-h-80 max-h-full overflow-hidden group">
                 {" "}
                 <img
-                  src={"https://i.imgur.com/xDEd3HH.jpg"}
+                  src={"https://i.imgur.com/OI6Iuq2.jpg"}
                   alt="Image"
                   className="w-full h-80 object-cover rounded-md "
-                  style={{ filter: "url(#blklightBlueskyWhiteBlack)" }}
                 />
                 <div className="absolute top-0 left-0 right-0 bottom-0 px-5 py-4 rounded-md flex flex-col justify-center items-center">
                   <div className="flex items-center justify-between">
