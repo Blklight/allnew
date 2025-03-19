@@ -148,7 +148,7 @@ export function NewSearchCommand() {
       title: "Novo artigo",
       subtitle: "Criar um novo artigo",
       iconBg: "bg-bluesky-500 text-light",
-      onClick: () => router.push("/criar/artigo"),
+      onClick: () => {},
       keywords: ["new article", "novo artigo", "create", "write"],
       category: "criar",
       id: "criar-article",

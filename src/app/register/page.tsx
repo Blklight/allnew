@@ -75,17 +75,6 @@ export default function Login() {
             <div className="absolute top-0 left-0 right-0 bottom-0 px-5 py-4 rounded-md flex flex-col bg-gradient-to-b from-transparent from-85% to-black/90">
               <h1 className="text-4xl font-bold tracking-tighter md:text-5xl lg:text-7xl text-light">
                 All New{" "}
-                {/* <AuroraText
-                  colors={[
-                    "#6A4DFF",
-                    "#28acff",
-                    "#f7f7f7",
-                    "#121212",
-                    "#FBF0D9",
-                  ]}
-                >
-                  All New
-                </AuroraText> */}
               </h1>
               <h1 className="text-4xl font-bold tracking-tighter md:text-5xl lg:text-7xl">
                 <AuroraText
@@ -100,16 +89,8 @@ export default function Login() {
                   Blklight
                 </AuroraText>
               </h1>
-              {/* <h1 className="text-3xl font-bold text-white italic">All New</h1>
-              <h1 className="text-6xl font-bold text-white">Blklight</h1> */}
+
               <div className="relative mt-auto flex items-center justify-between">
-                {/* <img
-                  src="/blklight-light.svg"
-                  className="absolute left-1/2 bottom-0 transform -translate-x-1/2 !max-w-none size-10"
-                  width="40"
-                  height="40"
-                  alt="Ultimate Mercer Logo"
-                /> */}
                 <div className="flex gap-1 items-center ml-auto">
                   <h4 className="text-sm text-right text-light ">
                     <span className="bg-dark/70 px-2 rounded !py-1">

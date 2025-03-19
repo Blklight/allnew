@@ -270,6 +270,7 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
     font-family: "Inter", "Geist Sans", sans-serif;
@@ -367,6 +368,22 @@
     margin: 0 0 16px !important;
   }
 
+  .article-grid > h1 {
+    font-size: 36px !important;
+  }
+
+  .article-grid > h2 {
+    font-size: 32px !important;
+  }
+
+  .article-grid > h3 {
+    font-size: 28px !important;
+  }
+
+  .article-grid > h4 {
+    font-size: 24px !important;
+  }
+
   @media screen and (max-width: 1024px) {
     .article-grid {
       display: grid;
@@ -441,6 +458,7 @@
 
     p {
       font-family: "EB Garamond", serif !important;
+      font-size: 20px !important;
     }
   }
 }

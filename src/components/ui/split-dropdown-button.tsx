@@ -11,6 +11,7 @@ import {
 import { ChevronDown } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
+import { useRouter } from "next/navigation";
 
 interface SplitDropdownButtonProps {
   label?: string;
@@ -58,7 +59,14 @@ export function SplitDropdownButton({
   onSelect,
   onClick,
 }: SplitDropdownButtonProps) {
+  const router = useRouter();
   const handleSelect = (value: string, optionOnClick?: () => void) => {
+    if (value === "criar-tutorial") {
+      onSelect?.(value);
+      optionOnClick?.();
+      router.push("/create");
+      return;
+    }
     onSelect?.(value);
     optionOnClick?.();
   };

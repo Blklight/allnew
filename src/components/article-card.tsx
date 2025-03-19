@@ -66,7 +66,6 @@ export const ArticleCard = ({
     if (type === "project") return "Projeto";
   };
 
-  console.log(data.stylesheet?.typography);
   return (
     <div
       className={cn(

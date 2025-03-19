@@ -36,9 +36,6 @@ export const NavToolbar = () => {
     }
   };
 
-  React.useEffect(() => {
-    console.log(isLogged);
-  }, [isLogged]);
   return (
     <>
       <div className="flex justify-between items-center p-4 z-20 rounded-t-md ">

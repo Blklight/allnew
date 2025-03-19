@@ -21,7 +21,7 @@ const styles = {
     title: "text-dark",
     borderColor: "border-l-orange-500 border-orange-500",
     color: "text-orange-500",
-    bg: "bg-orange-50/50 dark:bg-orange-50/90",
+    bg: "bg-orange-100/50 dark:bg-orange-50/90",
     background: "bg-orange-500 text-dark",
     difficultyBg: "bg-orange",
     difficultyColor: "text-dark",
@@ -31,7 +31,7 @@ const styles = {
     title: "text-light",
     borderColor: "bordder-l-cyber-yellow-500 border-cyber-yellow-500",
     color: "text-cyber-yellow-500",
-    bg: "bg-cyber-yellow-50/50 dark:bg-cyber-yellow-50/90",
+    bg: "bg-cyber-yellow-100/50 dark:bg-cyber-yellow-50/90",
     background: "bg-cyber-yellow-500 text-dark",
     // difficultyBg: "bg-orange",
     // difficultyColor: "text-dark",
@@ -41,7 +41,7 @@ const styles = {
     title: "text-light",
     borderColor: "border-l-magenta-500 border-magenta-500",
     color: "text-magenta-400",
-    bg: "bg-magenta-50/50 dark:bg-magenta-50/90",
+    bg: "bg-magenta-100/50 dark:bg-magenta-50/90",
     background: "bg-magenta-500 text-dark",
     // difficultyBg: "bg-orange",
     // difficultyColor: "text-dark",
@@ -65,7 +65,6 @@ export const SimpleCard = ({
     if (type === "project") return "Projeto";
   };
 
-  console.log(authors);
   return (
     <div
       className={cn(

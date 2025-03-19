@@ -72,7 +72,6 @@ export const getDraftDocuments = () => {
 };
 
 export const getDocument = async (params: any) => {
-  console.log("getdocument line 63", params);
   const allDocuments = await Promise.all(fetchDocuments(rawDocuments));
 
   const formattedRoute = `documents/${params?.slug}`;
@@ -81,7 +80,6 @@ export const getDocument = async (params: any) => {
   // );
 
   const doc = rawDocuments.find((obj) => obj.slug === formattedRoute);
-  console.log("getdocument line 73", doc?.title);
   debugger;
   const authorList = doc?.authors;
 
@@ -99,13 +97,11 @@ export const getDocument = async (params: any) => {
 };
 
 export const getDraftDocument = async (params: any) => {
-  console.log("getdraftdocument line 102", params);
   const allDocuments = await Promise.all(fetchDocuments(draftDocuments));
 
   const formattedRoute = `documents/${params?.slug}`;
 
   const doc = draftDocuments.find((obj) => obj.slug === formattedRoute);
-  console.log("line 108", doc);
   const authorList = doc?.authors;
 
   const authorPromise = authorList?.map((author) =>

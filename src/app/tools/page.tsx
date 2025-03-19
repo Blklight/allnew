@@ -35,6 +35,8 @@ export default function Tools() {
   const tools = [
     {
       title: "Novo artigo",
+      description:
+        "Escreva e publique artigos sobre seus temas favoritos. Adicione imagens, formate o texto e compartilhe conhecimento com a comunidade.",
       cover: "./images/article.jpeg",
       icon: Newspaper,
       background: "bg-cyber-yellow-500",
@@ -46,7 +48,9 @@ export default function Tools() {
     },
     {
       title: "Novo tutorial",
-      cover: "https://i.imgur.com/yb5WVlW.jpg",
+      description:
+        "Crie tutoriais passo a passo para ensinar algo novo. Use exemplos, imagens e códigos para deixar tudo mais claro e fácil de seguir.",
+      cover: "./images/article.jpeg",
       icon: BookOpen,
       background: "bg-orange-500",
       border: "border-light",
@@ -57,7 +61,9 @@ export default function Tools() {
     },
     {
       title: "Novo projeto",
-      cover: "https://i.imgur.com/yb5WVlW.jpg",
+      description:
+        "Apresente e documente seus projetos. Descreva a ideia, as ferramentas usadas e compartilhe seu progresso com outras pessoas.",
+      cover: "./images/article.jpeg",
       icon: RocketLaunch,
       background: "bg-magenta-50",
       border: "border-magenta-500",
@@ -88,22 +94,14 @@ export default function Tools() {
                   </div>
                 </div>
                 <div className="">
-                  <h3
-                    className={cn(
-                      "text-3xl font-bold mb-3",
-                      tool.textColor,
-                      tool.typography
-                    )}
-                  >
+                  <h3 className={cn("text-3xl font-bold mb-3", tool.textColor)}>
                     <span className={cn("marker-line bg-dark", tool.textColor)}>
                       {tool.title}
                     </span>
                   </h3>
                   <p className="mb-5">
                     <span className={cn("marker-line bg-dark", tool.textColor)}>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Integer nec odio. Praesent libero. Sed cursus ante dapibus
-                      diam.
+                      {tool.description}
                     </span>
                   </p>
                 </div>

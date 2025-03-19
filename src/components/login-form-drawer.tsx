@@ -41,7 +41,6 @@ export const LoginFormDrawer = ({
 
   const closeSheet = () => shouldOpenSheet(false);
   function onSubmit(values: z.infer<typeof loginSchema>) {
-    console.log(values);
     setUser(user);
     setIsLogged(true);
     closeSheet();

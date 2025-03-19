@@ -15,7 +15,6 @@ export const LoginButton = () => {
   const router = useRouter();
 
   const takeValue = (value: boolean) => {
-    console.log("takeValue", value);
     setOpenSheet(value);
   };
 

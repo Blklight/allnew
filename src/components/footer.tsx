@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export const Footer = () => {
   return (
-    <footer className="container flex flex-col items-center py-5">
+    <footer className="w-full flex flex-col items-center py-5">
       <div className="flex flex-col items-center gap-2 mb-6">
         <div className="p-1 rounded-md ">
           <img

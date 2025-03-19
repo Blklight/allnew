@@ -20,7 +20,7 @@ const BasicLayout = ({ doc, children }: any) => {
       <div className="max-w-full h-auto mb-5">
         <div
           className={cn(
-            "lg:max-w-[712px] md:max-w-full block mx-auto px-4",
+            "lg:max-w-[712px] md:max-w-full block mx-auto md:px-0 px-4",
             stylesheet.typography
           )}
         >
