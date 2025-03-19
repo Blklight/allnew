@@ -552,17 +552,17 @@ export function NewSearchCommand() {
               <div className="border-t p-2 text-xs text-muted-foreground flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <span>Pressione</span>
-                  <kbd className="rounded border bg-muted px-1.5 font-mono">
+                  <kbd className="rounded bg-bluesky-500 text-light px-1.5 font-mono">
                     ↑
                   </kbd>
-                  <kbd className="rounded border bg-muted px-1.5 font-mono">
+                  <kbd className="rounded bg-bluesky-500 text-light px-1.5 font-mono">
                     ↓
                   </kbd>
                   <span>para navegar</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span>Pressione</span>
-                  <kbd className="rounded border bg-muted px-1.5 font-mono">
+                  <kbd className="rounded bg-bluesky-500 text-light px-1.5 font-mono">
                     ESC
                   </kbd>
                   <span>para fechar</span>
