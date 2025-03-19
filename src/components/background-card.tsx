@@ -73,7 +73,7 @@ export const BackgroundCard = ({
       <img
         src={data.cover || "https://i.imgur.com/yb5WVlW.jpg"}
         alt={data.title}
-        className="w-full min-h-[525px] max-h-[650px] object-cover rounded-md group-hover:scale-110 transition-transform duration-500 "
+        className="w-full min-h-[525px] max-h-[600px] object-cover rounded-md group-hover:scale-110 transition-transform duration-500 "
         style={{ filter: `url(${cardStyles.filter})` }}
       />
 

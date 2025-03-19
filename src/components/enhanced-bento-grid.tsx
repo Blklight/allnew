@@ -36,7 +36,7 @@ export default function EnhancedBentoGrid({
     const checkViewport = () => {
       const width = window.innerWidth;
 
-      if (width < 640) {
+      if (width <= 768) {
         // Mobile: 1 column
         setIsMobile(true);
         setColumnCount(1);
@@ -298,7 +298,7 @@ export default function EnhancedBentoGrid({
   return (
     <div className="mx-auto my-2.5">
       <div
-        className={`grid gap-${gap}`}
+        className={`grid gap-${gap} grid-cols-1 md:grid-cols-${columnCount}`}
         style={{
           gridTemplateColumns: `repeat(${columnCount}, 1fr)`,
           // If we allow imperfect height, use auto-flow dense to fill gaps
@@ -311,7 +311,7 @@ export default function EnhancedBentoGrid({
           <CardWrapper
             key={item.id || index}
             type={item.cardType}
-            size={item._assignedSize}
+            size={isMobile ? "1x1" : item._assignedSize}
             index={index}
           >
             {renderCard(item)}

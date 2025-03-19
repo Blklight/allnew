@@ -19,10 +19,13 @@ export const TutorialFrame = ({
   return (
     <section
       id="tutorial-frame"
-      className="grid gap-4 lg:grid-cols-2 grid-cols-1 !mb-6"
+      className="flex lg:flex-row flex-col gap-4 !mb-6"
     >
       <div
-        className={cn("border rounded-md shadow-md overflow-hidden", className)}
+        className={cn(
+          "border flex-1 rounded-md shadow-md overflow-hidden",
+          className
+        )}
       >
         <div className="flex items-center justify-between bg-blklight-400 px-4 py-2 border-b">
           <div className="flex space-x-2">
@@ -38,7 +41,7 @@ export const TutorialFrame = ({
         </div>
         <div className="w-full py-2.5 px-5">{children}</div>
       </div>
-      <div className="relative pb-5">
+      <div className="relative flex-1 pb-5 lg:block hidden">
         <div className="sticky top-0">
           <div className="py-2.5 flex gap-2 ">
             <Button type="button">
@@ -58,7 +61,7 @@ export const TutorialFrame = ({
           <div className="!rounded-md min-h-[400px] h-[650px] max-h-svh overflow-hidden">
             <Editor
               theme="vs-dark"
-              className="!rounded-xl "
+              className="!rounded-md w-full h-full"
               defaultLanguage="javascript"
             />
           </div>

@@ -134,7 +134,7 @@ export const ArticleCard = ({
           <img
             src={data.cover || "https://i.imgur.com/YU2M76w.jpg"}
             alt={data.title}
-            className="w-full min-h-[200px] max-h-[300px] object-cover rounded-md shadow-md"
+            className="w-full min-h-[200px] max-h-[325px] object-cover rounded-md shadow-md"
           />
         </div>
         <div className="flex flex-wrap gap-2 mb-3">

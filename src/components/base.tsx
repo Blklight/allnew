@@ -15,9 +15,9 @@ export const Base = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <SidebarProvider>
-      <div className="w-full flex flex-row min-h-svh">
+      <div className="w-full flex md:flex-row flex-col min-h-svh">
         <IconSidebar />
-        <div className="relative bg-background shadow-lg rounded-md border flex-1 my-2.5 mr-2.5 background-texture">
+        <div className="bg-background shadow-lg rounded-md border flex-1 md:my-2.5 mb-2.5 md:mr-2.5 background-texture">
           <NavToolbar />
           <div className="pt-2.5 mb-5 px-4">{children}</div>
           {/* <NoiseBackground density={0.9} opacity={0.075} /> */}

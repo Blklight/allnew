@@ -2,6 +2,7 @@
 
 @plugin "tailwindcss-animate";
 @plugin "@tailwindcss/typography";
+@config "../../tailwind.config.js";
 
 @custom-variant dark (&:is(.dark *));
 @custom-variant book (&:is(.book *));
@@ -304,37 +305,6 @@
 
   /* Arquivo de estilos com Tailwind CSS usando @apply */
 }
-
-/* .main-article .article-grid {
-  letter-spacing: 0.01em;
-  font-size: 18px;
-  line-height: 1.5;
-}
-
-.main-article .article-grid .serif {
-}
-
-.main-article .article-grid .serif h1,
-.main-article .article-grid .serif h2,
-.main-article .article-grid .serif h3,
-.main-article .article-grid .serif h4,
-.main-article .article-grid .serif h5,
-.main-article .article-grid .serif h6 {
-  font-family: "Playfair Display", serif !important;
-}
-
-.main-article .article-grid .serif p {
-  font-family: "EB Garamond", serif !important;
-}
-
-.main-article .article-grid .barlow {
-  font-family: "Barlow", sans-serif !important;
-}
-
-.main-article .article-grid .mono {
-  font-family: "JetBrains Mono", monospace !important;
-} */
-
 .background-texture {
   background-image: url("../assets/images/noisy.png");
   background-attachment: local;
@@ -357,7 +327,7 @@
 .main-article {
   .article-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 10px 680px 10px 1fr 1fr;
+    grid-template-columns: 1fr 1fr 10px 700px 10px 1fr 1fr;
     font-size: 18px;
     padding-bottom: 1.5rem;
   }
@@ -385,8 +355,8 @@
 
   .article-grid > #tutorial-frame {
     grid-column-start: 1;
-    grid-column-end: 8;
-    margin: 8px;
+    grid-column-end: -1;
+    margin: 0 8px;
   }
 
   .article-grid > hr {
@@ -395,6 +365,66 @@
 
   .article-grid > p {
     margin: 0 0 16px !important;
+  }
+
+  @media screen and (max-width: 1024px) {
+    .article-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 10px 675px 10px 1fr 1fr;
+    }
+
+    .article-grid > * {
+      grid-column-start: 4;
+      grid-column-end: 4;
+    }
+
+    .article-grid > figure {
+      grid-column-start: 2;
+      grid-column-end: -2;
+      margin: 16px 0 20px;
+    }
+
+    .article-grid > blockquote {
+      grid-column: 3 / 5;
+    }
+
+    .article-grid > #tutorial-frame {
+      grid-column-start: 1;
+      grid-column-end: -1;
+      margin: 0 8px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .article-grid {
+      /* display: flex;
+      flex-direction: column; */
+      display: block;
+      padding: 0 16px;
+      /* display: grid;
+      grid-template-columns: 10px auto 10px; */
+      p {
+        font-size: 18px;
+      }
+
+      pre {
+        white-space: pre-wrap !important;
+      }
+    }
+
+    .article-grid > * {
+      grid-column-start: 2;
+      grid-column-end: 2;
+    }
+
+    /* .article-grid > figure {
+      grid-column: 2;
+      margin: 16px 0 16px;
+    }
+
+    .article-grid > blockquote {
+      grid-column: 2;
+    } */
   }
 }
 

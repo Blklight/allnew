@@ -51,7 +51,7 @@ const BasicLayout = ({ doc, children }: any) => {
       </div>
       <article
         className={cn(
-          "article-grid text-dark dark:text-light prose max-w-none dark:prose-invert !dark:text-light",
+          "article-grid text-dark dark:text-light prose max-w-none dark:prose-invert",
           stylesheet.typography
         )}
       >
