@@ -18,13 +18,13 @@ export const Footer = () => {
       <nav className="flex gap-6 mb-6">
         <Link
           href="#"
-          className="text-sm text-dark  transition-colors hover:underline"
+          className="text-sm text-dark dark:text-light  transition-colors hover:underline"
         >
           Sobre
         </Link>
         <Link
           href="#"
-          className="text-sm text-dark  transition-colors hover:underline"
+          className="text-sm text-dark dark:text-light  transition-colors hover:underline"
         >
           Contato
         </Link>
