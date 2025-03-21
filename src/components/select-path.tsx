@@ -63,7 +63,7 @@ export function SelectPathsDialog({
         onOpenChange(newOpen);
       }}
     >
-      <DialogContent className="sm:max-w-[600px]">
+      <DialogContent className="sm:max-w-[600px] background-texture">
         <DialogHeader>
           <DialogTitle>Adicionar a Trilhas de Aprendizado</DialogTitle>
           {article && (

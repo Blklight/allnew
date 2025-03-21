@@ -431,7 +431,7 @@ export const articleData = {
     date: "2025-03-15T17:42:00.000Z",
     tags: ["front-end", "html", "css", "javascript", "react"],
     draft: true,
-    cover: "https://i.imgur.com/Qw6LuRE.jpg",
+    cover: "https://i.imgur.com/OI6Iuq2.jpg",
     stylesheet: {
       pageLayout: "",
       cardLayout: "article-card",

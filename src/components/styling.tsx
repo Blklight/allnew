@@ -287,7 +287,7 @@ export const Styling = () => {
       </SheetTrigger>
       <SheetContent
         title="Estilização"
-        className="w-[500px] sm:w-[calc(100vw-32px)] sm:max-w-[calc(100vw-32px)] max-w-[calc(100vw-32px)] max-h-[calc(100vh-32px)] xl:max-w-[calc(100vw-32px)] p-8 m-2.5 overflow-y-auto border rounded-md"
+        className="w-[500px] sm:w-[calc(100vw-32px)] sm:max-w-[calc(100vw-32px)] max-w-[calc(100vw-32px)] max-h-[calc(100vh-32px)] xl:max-w-[calc(100vw-32px)] p-8 m-2.5 overflow-y-auto border rounded-md background-texture"
       >
         <div className="max-w-3xl mx-auto">
           <SheetTitle className="text-[28px] font-bold">

@@ -58,7 +58,7 @@ export default function Preview() {
             <div className="border p-4 rounded-md shadow-md relative">
               <h5 className="text-[20px] font-bold mb-2">Estilização</h5>
               <div className="flex flex-wrap gap-2 mb-4">
-                {Array.from(["Javascript", "React", "Tutorial"]).map(
+                {Array.from(["Card com background", "Fonte serifada"]).map(
                   (item, index) => (
                     <Badge key={index} className="!text-base">
                       <Palette className="mr-1 size-4" />
