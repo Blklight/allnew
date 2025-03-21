@@ -184,7 +184,7 @@
   --secondary-foreground: var(--color-light);
   --muted: var(--color-grey);
   --muted-foreground: var(--color-grey-darker);
-  --accent: var(--color-blklight-100);
+  --accent: var(--color-blklight-200);
   --accent-foreground: var(--color-dark);
   --destructive: var(--color-crimson-500);
   --destructive-foreground: var(--color-crimson-500);
