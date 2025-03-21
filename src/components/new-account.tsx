@@ -129,14 +129,14 @@ export function NewAccount() {
       <p className="px-8 text-center text-sm text-muted-foreground">
         Ao clicar em Criar Conta, você concorda com nossos{" "}
         <Link
-          href="/termos"
+          href="#"
           className="underline underline-offset-4 hover:text-primary"
         >
           Termos de Serviço
         </Link>{" "}
         e{" "}
         <Link
-          href="/privacidade"
+          href="#"
           className="underline underline-offset-4 hover:text-primary"
         >
           Política de Privacidade

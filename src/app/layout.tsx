@@ -123,7 +123,7 @@ export default function RootLayout({
           <Base>{children}</Base>
 
           <Toaster />
-          <DevTools />
+          {/* <DevTools /> */}
           <DuotoneFilter />
           <OrangeWhite />
           <OrangeWhiteBlack />
