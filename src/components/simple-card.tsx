@@ -74,14 +74,22 @@ export const SimpleCard = ({
       )}
     >
       <div className="flex justify-between items-center mb-2.5">
-        <div
+        <Badge
           className={cn(
-            "flex items-center px-2 py-0.5 h-9  rounded-md",
-            cardStyles.tags
+            "text-base rounded-md py-0 h-9",
+            cardStyles.tags,
+            data.tutorial?.difficulty && "pr-0"
           )}
         >
           {typeManager(data.documentType)}
-        </div>
+
+          {data.tutorial?.difficulty && (
+            <Badge className="bg-orange-200 text-dark text-base rounded-md py-1 capitalize ml-1">
+              <BarChart className="h-5 w-5" />
+              {data.tutorial?.difficulty}
+            </Badge>
+          )}
+        </Badge>
         <Button
           size="icon"
           className={cn(

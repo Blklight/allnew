@@ -82,8 +82,9 @@ export const BackgroundCard = ({
           <div className="flex gap-2">
             <Badge
               className={cn(
-                "text-base rounded-md pr-0 py-0",
-                cardStyles.background
+                "text-base rounded-md py-0",
+                cardStyles.background,
+                data.tutorial?.difficulty && "pr-0"
               )}
             >
               {typeManager(data.documentType)}
