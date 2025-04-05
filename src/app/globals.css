@@ -51,6 +51,17 @@
   --color-bluesky-900: oklch(27.817% 0.06805 243.6);
   --color-bluesky-950: oklch(20.759% 0.04744 239.86);
 
+  --color-havelock-blue-100: oklch(91.124% 0.03133 240.67);
+  --color-havelock-blue-200: oklch(84.971% 0.05374 240.69);
+  --color-havelock-blue-300: oklch(78.567% 0.07629 241.15);
+  --color-havelock-blue-400: oklch(72.586% 0.0984 241.99);
+  --color-havelock-blue-500: oklch(66.528% 0.12052 243.87);
+  --color-havelock-blue-600: oklch(57.974% 0.12715 245.24);
+  --color-havelock-blue-700: oklch(47.63% 0.10211 245.42);
+  --color-havelock-blue-800: oklch(36.666% 0.07569 245.5);
+  --color-havelock-blue-900: oklch(25.114% 0.04544 243.77);
+  --color-havelock-blue-950: oklch(18.536% 0.02943 245.25);
+
   --color-crimson-50: oklch(87.578% 0.05841 11.737);
   --color-crimson-100: oklch(83.499% 0.07966 12.092);
   --color-crimson-200: oklch(75.846% 0.12502 14.266);
@@ -109,7 +120,7 @@
   --popover-foreground: var(--color-dark);
   --primary: var(--color-blklight-500);
   --primary-foreground: var(--color-light);
-  --secondary: var(--color-bluesky-500);
+  --secondary: var(--color-havelock-blue-500);
   --secondary-foreground: var(--color-light);
   --muted: var(--color-grey);
   --muted-foreground: var(--color-grey-darker);
@@ -145,7 +156,7 @@
   --popover-foreground: var(--color-light);
   --primary: var(--color-blklight-500);
   --primary-foreground: var(--color-light);
-  --secondary: var(--color-bluesky-500);
+  --secondary: var(--color-havelock-blue-500);
   --secondary-foreground: var(--color-light);
   --muted: var(--color-blklight-900);
   --muted-foreground: var(--color-grey-medium);
@@ -180,7 +191,7 @@
   --popover-foreground: var(--color-dark);
   --primary: var(--color-blklight-500);
   --primary-foreground: var(--color-light);
-  --secondary: var(--color-bluesky-500);
+  --secondary: var(--color-havelock-blue-500);
   --secondary-foreground: var(--color-light);
   --muted: var(--color-grey);
   --muted-foreground: var(--color-grey-darker);
