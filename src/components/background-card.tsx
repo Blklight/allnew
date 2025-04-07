@@ -44,10 +44,10 @@ const styles = {
     color: "text-magenta-400",
     bg: "",
     underline: "text-magenta-400",
-    background: "bg-magenta-500 text-dark",
+    background: "bg-magenta-300 text-dark",
     // difficultyBg: "bg-orange",
     // difficultyColor: "text-dark",
-    tags: "bg-magenta-500 text-dark",
+    tags: "bg-magenta-300 text-dark",
     filter: "#magentaWhite",
   },
 };
