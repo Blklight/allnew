@@ -37,11 +37,11 @@ const styles = {
   },
   project: {
     title: "text-light",
-    background: "bg-magenta-500 text-dark",
+    background: "bg-magenta-300 text-dark",
     // difficultyBg: "bg-orange",
     // difficultyColor: "text-dark",
-    tags: "bg-dark text-magenta-500",
-    tagHeader: "bg-dark text-magenta-500 border-magenta-500",
+    tags: "bg-dark text-magenta-300",
+    tagHeader: "bg-dark text-magenta-300 border-magenta-300",
     filter: "#magentaWhiteBlack",
   },
 };
