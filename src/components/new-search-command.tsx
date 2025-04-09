@@ -81,7 +81,7 @@ export function NewSearchCommand() {
       icon: <RocketLaunch className="h-5 w-5" />,
       title: "Projetos",
       subtitle: "Descubra todos os projetos",
-      iconBg: "bg-magenta-500 text-dark border border-dark",
+      iconBg: "bg-magenta-300 text-dark border border-dark",
       onClick: () => {},
       keywords: ["projects", "projetos", "portfolio", "work"],
       category: "global",
@@ -147,7 +147,7 @@ export function NewSearchCommand() {
       icon: <Sparkle className="h-5 w-5" />,
       title: "Novo artigo",
       subtitle: "Criar um novo artigo",
-      iconBg: "bg-bluesky-500 text-light",
+      iconBg: "bg-havelock-blue-500 text-light",
       onClick: () => {},
       keywords: ["new article", "novo artigo", "create", "write"],
       category: "criar",
@@ -157,7 +157,7 @@ export function NewSearchCommand() {
       icon: <Sparkle className="h-5 w-5" />,
       title: "Novo tutorial",
       subtitle: "Criar um novo tutorial",
-      iconBg: "bg-bluesky-500 text-light",
+      iconBg: "bg-havelock-blue-500 text-light",
       onClick: () => router.push("/create"),
       keywords: ["new tutorial", "novo tutorial", "create", "write"],
       category: "criar",
@@ -167,7 +167,7 @@ export function NewSearchCommand() {
       icon: <Sparkle className="h-5 w-5" />,
       title: "Novo projeto",
       subtitle: "Criar um novo projeto",
-      iconBg: "bg-bluesky-500 text-light",
+      iconBg: "bg-havelock-blue-500 text-light",
       onClick: () => {},
       keywords: ["new project", "novo projeto", "create", "build"],
       category: "criar",
@@ -361,7 +361,7 @@ export function NewSearchCommand() {
         <Search className="h-5 w-5" />
         <span className="hidden lg:inline-flex">Pesquisar...</span>
         <span className="inline-flex lg:hidden">Pesquisar...</span>
-        <kbd className="pointer-events-none absolute right-1.5 top-[0.45rem] hidden h-5 select-none items-center gap-1 rounded bg-bluesky-500 text-light px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex">
+        <kbd className="pointer-events-none absolute right-1.5 top-[0.45rem] hidden h-5 select-none items-center gap-1 rounded bg-havelock-blue-500 text-light px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex">
           <span className="text-xs">⌘</span>K
         </kbd>
       </Button>
@@ -552,17 +552,17 @@ export function NewSearchCommand() {
               <div className="border-t p-2 text-xs text-muted-foreground flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <span>Pressione</span>
-                  <kbd className="rounded bg-bluesky-500 text-light px-1.5 font-mono">
+                  <kbd className="rounded bg-havelock-blue-500 text-light px-1.5 font-mono">
                     ↑
                   </kbd>
-                  <kbd className="rounded bg-bluesky-500 text-light px-1.5 font-mono">
+                  <kbd className="rounded bg-havelock-blue-500 text-light px-1.5 font-mono">
                     ↓
                   </kbd>
                   <span>para navegar</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span>Pressione</span>
-                  <kbd className="rounded bg-bluesky-500 text-light px-1.5 font-mono">
+                  <kbd className="rounded bg-havelock-blue-500 text-light px-1.5 font-mono">
                     ESC
                   </kbd>
                   <span>para fechar</span>
