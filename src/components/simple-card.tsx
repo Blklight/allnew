@@ -39,13 +39,13 @@ const styles = {
   },
   project: {
     title: "text-light",
-    borderColor: "border-l-magenta-500 border-magenta-500",
+    borderColor: "border-l-magenta-300 border-magenta-300",
     color: "text-magenta-400",
     bg: "bg-magenta-100/50 dark:bg-magenta-50/90",
-    background: "bg-magenta-500 text-dark",
+    background: "bg-magenta-300 text-dark",
     // difficultyBg: "bg-orange",
     // difficultyColor: "text-dark",
-    tags: "bg-magenta-500 text-dark",
+    tags: "bg-magenta-300 text-dark",
   },
 };
 
