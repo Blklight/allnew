@@ -45,13 +45,6 @@ export default async function Home() {
           Blklight
         </AuroraText>
       </h1>
-      {/* <h1 className="text-4xl font-bold tracking-tighter md:text-5xl lg:text-7xl lg:hidden inline-block">
-        <AuroraText
-          colors={["#6A4DFF", "#28acff", "#f7f7f7", "#121212", "#FBF0D9"]}
-        >
-          Blklight
-        </AuroraText>
-      </h1> */}
 
       <div className="mb-6">
         <div className="relative flex self-stretch min-w-0 flex-col bg-clip-border rounded-md shadow-lg min-h-80 max-h-full overflow-hidden group ">
